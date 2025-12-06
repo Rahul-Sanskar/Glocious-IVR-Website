@@ -65,9 +65,7 @@ function ParticleNetwork({ count = 200 }) {
             <bufferGeometry>
                 <bufferAttribute
                     attach="attributes-position"
-                    count={linkPositions.length / 3}
-                    array={linkPositions}
-                    itemSize={3}
+                    args={[linkPositions, 3]}
                 />
             </bufferGeometry>
             <lineBasicMaterial color="#9333ea" transparent opacity={0.15} />
