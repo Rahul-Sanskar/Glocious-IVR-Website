@@ -5,8 +5,8 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import { Points, PointMaterial } from "@react-three/drei";
 
 function ParticleNetwork({ count = 200 }) {
-  const pointsRef = useRef(null);
-  const linesRef = useRef(null);
+  const pointsRef = useRef<any>(null);
+  const linesRef = useRef<any>(null);
 
   // Generate random points in a sphere
   const [positions, linkPositions] = useMemo(() => {
@@ -49,7 +49,7 @@ function ParticleNetwork({ count = 200 }) {
       pointsRef.current.rotation.x =
         Math.sin(state.clock.getElapsedTime() * 0.1) * 0.1;
     }
-    if (linesRef.current) {
+    if (linesRef.current && pointsRef.current) {
       linesRef.current.rotation.copy(pointsRef.current.rotation);
     }
   });
@@ -64,7 +64,7 @@ function ParticleNetwork({ count = 200 }) {
       >
         <PointMaterial
           transparent
-          color="#a855f7" 
+          color="#a855f7"
           size={0.02}
           sizeAttenuation={true}
           depthWrite={false}
@@ -80,11 +80,11 @@ function ParticleNetwork({ count = 200 }) {
             args={[linkPositions, 3]}
           />
         </bufferGeometry>
-        <lineBasicMaterial 
-            color="#5808a3" 
-            transparent 
-            opacity={0.3} 
-            toneMapped={false}
+        <lineBasicMaterial
+          color="#5808a3"
+          transparent
+          opacity={0.3}
+          toneMapped={false}
         />
       </lineSegments>
     </group>
