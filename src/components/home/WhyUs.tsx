@@ -5,6 +5,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { Rocket, ShieldCheck, Globe2, Users } from "lucide-react";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -84,15 +85,9 @@ export function WhyUs() {
           </div>
 
           {/* Right: Visual/Image (Placeholder for now, could be a 3D element or Image) */}
-          <div className="hidden lg:flex items-center justify-center p-8 bg-white/5 rounded-3xl border border-white/10 aspect-square">
+          <div className="hidden lg:flex items-center justify-center bg-white/5 rounded-3xl border border-white/10 aspect-square">
              {/* Abstract Visual Representation */}
-             <div className="relative w-full h-full flex items-center justify-center">
-                <div className="absolute w-3/4 h-3/4 bg-gradient-to-tr from-primary/20 to-purple-500/20 rounded-full blur-xl animate-pulse" />
-                <div className="relative z-10 text-center space-y-2">
-                    <p className="text-6xl font-bold font-heading text-white">300%</p>
-                    <p className="text-sm text-muted-foreground uppercase tracking-widest">Average ROI Increase</p>
-                </div>
-             </div>
+             <Image alt="about us image" src={'/about.webp'} width={900} height={900} className="w-full h-full object-cover rounded-lg"/>
           </div>
 
         </div>

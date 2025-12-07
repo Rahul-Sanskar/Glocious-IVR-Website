@@ -5,8 +5,8 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const techStack = [
-    "Next.js", "React", "TypeScript", "Tailwind CSS", "GSAP", "Three.js", "Node.js", "PostgreSQL",
-    "Supabase", "AWS", "Vercel", "Figma", "Blender", "Shopify", "Sanity CMS", "Prisma"
+    "Next.js", "React", "TypeScript", "Tailwind CSS", "GSAP", "Three.js", "Node.js", "Google Ads",
+    "Supabase", "Meta", "Vercel", "Figma", "Amazon", "Shopify", "PPC"
 ];
 
 // Duplicate for loop

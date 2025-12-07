@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 
 const logos = [
-  "Google", "Amazon", "Shopify", "Meta", "Stripe", "Vercel", "Next.js", "React"
+  "Google Ads", "Amazon", "Shopify", "Meta", "Vercel", "Next.js", "React","GSAP"
 ];
 
 // Duplicate logos to create seamless loop

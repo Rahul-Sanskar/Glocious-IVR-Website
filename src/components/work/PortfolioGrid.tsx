@@ -36,7 +36,6 @@ export function PortfolioGrid() {
     : allProjects.filter(p => p.category === filter);
 
   useGSAP(() => {
-    // Animate items when filter changes or on load
     gsap.fromTo(
       ".project-card-wrapper", 
       { opacity: 0, y: 50 }, 
@@ -73,23 +72,27 @@ export function PortfolioGrid() {
         ))}
       </div>
 
-      {/* Grid - CSS Grid for Masonry-ish look (simple columns for now, true masonry needs JS or columns-count) */}
+      {/* Grid */}
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 ">
         {filteredProjects.map((project, index) => (
-            <div key={project.id} className="project-card-wrapper"> 
-               {/* 
-                  To simulate masonry with different heights, we could toggle aspect ratios based on index
-                  For now keeping consistent for grid stability 
-                */}
+            <div 
+                key={project.id} 
+                className="project-card-wrapper cursor-default" 
+                // CHANGED: onClickCapture intercepts the event BEFORE it reaches the inner Link/<a> tag.
+                onClickCapture={(e) => {
+                    e.preventDefault(); 
+                    e.stopPropagation();
+                }}
+            > 
                 <ProjectCard {...project} />
             </div>
         ))}
       </div>
       
-      {/* Load More Trigger (Simulated) */}
+      {/* Load More Trigger */}
       <div className="flex justify-center pt-24">
          <Button variant="outline" size="xl" className="border-white/10 hover:border-primary/50 text-muted-foreground hover:text-white animate-pulse-slow">
-            Load More Archives
+           Load More Archives
          </Button>
       </div>
     </div>

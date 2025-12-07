@@ -10,7 +10,7 @@ interface ServiceDirectButtonProps {
 
 export function ServiceDirectButton({ className, label = "Get This Service" }: ServiceDirectButtonProps) {
     // Replace this with the actual Google Form URL provided by the user or a placeholder
-    const googleFormUrl = "https://docs.google.com/forms/u/0/"; 
+    const googleFormUrl = "https://forms.gle/wtvTQZpaTCy4Mj718"; 
 
     return (
         <Button 

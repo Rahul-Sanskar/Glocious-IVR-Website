@@ -93,8 +93,7 @@ export function Hero() {
           </h1>
           
           <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-10 max-w-xl border-l-2 border-primary/20 pl-6 transform-gpu">
-            We engineer immersive digital experiences that defy gravity. 
-            Elevate your brand with high-performance code and futuristic design.
+            We Build Future Stunning digital Solutions.
           </p>
           
           <div className="flex flex-col sm:flex-row gap-6 transform-gpu">

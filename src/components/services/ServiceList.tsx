@@ -8,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { CheckCircle2 } from "lucide-react";
 import { animateReveal } from "@/lib/animations";
+import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -15,6 +16,7 @@ const servicesDetail = [
   {
     id: "web-development",
     title: "Web Development",
+    image:"/webs-dev.png",
     description: "We build pixel-perfect, high-performance websites using the latest technologies. From simple landing pages to complex web applications, we ensure your digital presence is robust and scalable.",
     features: ["Next.js & React", "Headless CMS Integration", "Performance Optimization", "Accessibility Compliance"],
     color: "text-blue-500",
@@ -22,6 +24,7 @@ const servicesDetail = [
   {
     id: "shopify-solutions",
     title: "Shopify Solutions",
+    image:"/shopify.png",
     description: "Elevate your e-commerce business with our expert Shopify services. We specialize in custom theme development, app integration, and conversion rate optimization.",
     features: ["Custom Theme Development", "Store Setup & Migration", "App Integration", "Conversion Optimization"],
     color: "text-green-500",
@@ -29,19 +32,28 @@ const servicesDetail = [
   {
     id: "amazon-services",
     title: "Amazon Services",
+    image:"/amazonss.png",
     description: "Dominate the world's largest marketplace. Our comprehensive Amazon FBA management and marketing strategies help you increase sales and visibility.",
     features: ["FBA Management", "Listing Optimization (SEO)", "PPC Campaign Management", "Brand Protection"],
     color: "text-orange-500",
   },
   {
-    id: "digital-marketing",
-    title: "Digital Marketing",
-    description: "Data-driven marketing strategies that deliver real results. We focus on ROI, using a mix of SEO, SEM, and social media to reach your target audience.",
-    features: ["SEO Strategy", "Google Ads Management", "Social Media Marketing", "Content Marketing"],
+    id: "seo-sem",
+    title: "SEO & SEM",
+    image:"/se.png",
+    description: "We drive organic traffic and maximize visibility through meticulous search engine optimization (SEO) and search engine marketing (SEM) strategies.",
+    features: ["Technical SEO", "On-Page Optimization", "Keyword Research", "Local SEO"],
     color: "text-purple-500",
   },
+  {
+    id: "google-ads",
+    title: "Google Ads",
+    image:"/google-ads.png",
+    description: "Maximize your ROI with targeted and effective PPC campaigns across platforms like Google, ensuring immediate, high-quality traffic to your site.",
+    features: ["Campaign Setup", "Ad Copywriting", "Bid Management", "A/B Testing"],
+    color: "text-red-500",
+  },
 ];
-
 export function ServiceList() {
   const containerRef = useRef<HTMLDivElement>(null);
 
@@ -85,9 +97,7 @@ export function ServiceList() {
           {/* Visual Placeholder */}
           <div className={`order-1 ${index % 2 === 0 ? "md:order-2" : "md:order-1"}`}>
              <div className="animate-item w-full aspect-video rounded-3xl bg-secondary border border-white/10 flex items-center justify-center relative overflow-hidden group">
-                 {/* Decorative Gradient Blob */}
-                 <div className={`absolute w-1/2 h-1/2 rounded-full blur-[80px] opacity-20 ${service.color.replace('text-', 'bg-')}`} />
-                 <span className="relative z-10 text-muted-foreground font-medium">Visual for {service.title}</span>
+               <Image src={service.image} width={900} height={900} className="w-full h-full object-cover" alt="service image" />
              </div>
           </div>
 

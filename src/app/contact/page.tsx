@@ -28,17 +28,18 @@ export default function ContactPage() {
                         <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-secondary/30 hover:bg-primary/10 transition-colors border border-transparent hover:border-primary/30">
                             <Mail className="w-8 h-8 text-primary mb-4" />
                             <h3 className="font-bold mb-1">Email</h3>
-                            <a href="mailto:hello@softbiz.io" className="text-sm text-muted-foreground hover:text-white">hello@softbiz.io</a>
+                            <a href="mailto:contact@thesoftbiz.com" className="text-sm text-muted-foreground hover:text-white">contact@thesoftbiz.com</a>
                         </div>
                         <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-secondary/30 hover:bg-primary/10 transition-colors border border-transparent hover:border-primary/30">
                             <Phone className="w-8 h-8 text-primary mb-4" />
                             <h3 className="font-bold mb-1">Phone</h3>
-                            <a href="tel:+15551234567" className="text-sm text-muted-foreground hover:text-white">+1 (555) 123-4567</a>
+                            <a href="tel:+18332281750" className="text-sm text-muted-foreground hover:text-white">+1 (833) 228-1750</a>
+                            <a href="tel:+923002523323" className="text-sm text-muted-foreground hover:text-white">+92 (300) 252-3323</a>
                         </div>
                         <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-secondary/30 hover:bg-primary/10 transition-colors border border-transparent hover:border-primary/30">
                             <MapPin className="w-8 h-8 text-primary mb-4" />
                             <h3 className="font-bold mb-1">HQ</h3>
-                            <p className="text-sm text-muted-foreground">San Francisco, CA</p>
+                            <p className="text-sm text-muted-foreground">3232 McKinney Ave, Suite No285, 4th Floor. Dallas. Tx. 75024. USA</p>
                         </div>
                      </div>
 

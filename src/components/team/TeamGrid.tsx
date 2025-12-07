@@ -3,27 +3,51 @@
 import React, { useState, useRef, useEffect } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
-import { Linkedin, Twitter, Mail } from "lucide-react";
+import { Linkedin, Twitter, Mail, Instagram, Github } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { animateReveal } from "@/lib/animations";
 
 const departments = ["All", "Leadership", "Development", "Design", "Marketing"];
 
 const team = [
-  { name: "Alex Morgan", role: "CEO & Founder", dept: "Leadership", image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&q=80&w=400", quote: "Innovation is our currency." },
-  { name: "Sarah Chen", role: "CTO", dept: "Leadership", image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&q=80&w=400", quote: "Code is poetry." },
-  { name: "Mike Ross", role: "Lead Developer", dept: "Development", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&q=80&w=400", quote: "Clean code, clear mind." },
-  { name: "Jessica Suits", role: "Creative Director", dept: "Design", image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?auto=format&fit=crop&q=80&w=400", quote: "Design is intelligence made visible." },
-  { name: "David Kim", role: "Head of Marketing", dept: "Marketing", image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400", quote: "Data tells the story." },
-  { name: "Emily Blunt", role: "UI/UX Designer", dept: "Design", image: "https://images.unsplash.com/photo-1598550874175-4d7112ee7f38?auto=format&fit=crop&q=80&w=400", quote: "Empathy drives design." },
-  // Add more as needed
+  { 
+    name: "Shahid Nadeem", 
+    role: "CEO & Founder, Chairman", 
+    dept: "Leadership", 
+    image: "/shahid.png",
+    quote: "Leading with vision and purpose." 
+  },
+  { 
+    name: "Abdullah Nadeem", 
+    role: "Director & Co-Founder , Lead Developer", 
+    dept: "Leadership, Development, Design", 
+    image: "/abdullah.jpg",
+    quote: "Building ideas into reality." ,
+    linkedin: "https://www.linkedin.com/in/abdullah-nadeem-319560285",
+    instagram: "https://www.instagram.com/abdullahx__.19",
+    mail: "abdullahnadeem2580@gmail.com",
+    github:"https://github.com/ab9898998989898"
+  },
+  { 
+    name: "Muhammad Hassan", 
+    role: "CMO, Marketing Head", 
+    dept: "Marketing", 
+    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400",
+    quote: "Marketing that creates impact." 
+  }
 ];
+
 
 export function TeamGrid() {
   const [filter, setFilter] = useState("All");
   const containerRef = useRef<HTMLDivElement>(null);
 
-  const filteredTeam = team.filter(member => filter === "All" || member.dept === filter);
+  const filteredTeam = team.filter(member => {
+  if (filter === "All") return true;
+
+  return member.dept.split(",").map(d => d.trim()).includes(filter);
+});
+
 
   useGSAP(() => {
     // Animate items when filter changes using optimized utility
@@ -75,9 +99,10 @@ export function TeamGrid() {
                 <div className="h-0 opacity-0 group-hover:h-auto group-hover:opacity-100 transition-all duration-300 overflow-hidden">
                     <p className="text-sm text-gray-300 italic mb-4">"{member.quote}"</p>
                     <div className="flex space-x-4">
-                        <a href="#" className="text-white hover:text-primary transition-colors"><Linkedin size={20} /></a>
-                        <a href="#" className="text-white hover:text-primary transition-colors"><Twitter size={20} /></a>
-                        <a href="#" className="text-white hover:text-primary transition-colors"><Mail size={20} /></a>
+                        <a href={member.linkedin} className="text-white hover:text-primary transition-colors"><Linkedin size={20} /></a>
+                        <a href={member.instagram} className="text-white hover:text-primary transition-colors"><Instagram size={20} /></a>
+                        <a href={member.mail} className="text-white hover:text-primary transition-colors"><Mail size={20} /></a>
+                        {member.name === "Abdullah Nadeem" && <a href={member.github} className="text-white hover:text-primary transition-colors"><Github size={20} /></a>}
                     </div>
                 </div>
             </div>

@@ -2,6 +2,7 @@
 
 import React from "react";
 import { CircleDot } from "lucide-react";
+import Image from "next/image";
 
 export function DeliverablesTimeline() {
   return (
@@ -34,22 +35,8 @@ export function DeliverablesTimeline() {
 
                 <div className="relative">
                     {/* Abstract visual representation of deliverables */}
-                    <div className="aspect-square relative rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-secondary to-background p-8">
-                       <div className="absolute inset-0 bg-mesh opacity-20" />
-                       <div className="relative z-10 h-full flex flex-col justify-between">
-                            <div className="p-6 glass-panel rounded-xl w-3/4 self-start animate-pulse-slow">
-                                <div className="h-2 w-1/3 bg-white/20 rounded mb-2" />
-                                <div className="h-2 w-1/2 bg-white/10 rounded" />
-                            </div>
-                            <div className="p-6 glass-panel rounded-xl w-3/4 self-end">
-                                 <div className="h-2 w-1/3 bg-primary/40 rounded mb-2" />
-                                 <div className="h-2 w-2/3 bg-white/10 rounded" />
-                            </div>
-                             <div className="p-6 glass-panel rounded-xl w-3/4 self-center">
-                                 <div className="h-2 w-1/2 bg-accent/40 rounded mb-2" />
-                                 <div className="h-2 w-3/4 bg-white/10 rounded" />
-                            </div>
-                       </div>
+                    <div className="aspect-square relative rounded-3xl overflow-hidden border border-white/10 bg-gradient-to-br from-secondary to-background">
+                       <Image src={'/tangible-outcomes.png'} alt="deliverable-image" width={900} height={900} className="w-full h-full object-cover" />
                     </div>
                 </div>
             </div>
