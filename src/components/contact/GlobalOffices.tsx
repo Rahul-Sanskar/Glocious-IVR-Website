@@ -4,10 +4,9 @@ import React from "react";
 import { Clock } from "lucide-react";
 
 const offices = [
-    { city: "San Francisco", address: "123 Market St, Suite 400", time: "PST (UTC-8)" },
-    { city: "London", address: "45 Shoreditch High St", time: "GMT (UTC+0)" },
-    { city: "Singapore", address: "88 Market St, CapitaSpring", time: "SGT (UTC+8)" },
-    { city: "Berlin", address: "Torstraße 1, Mitte", time: "CET (UTC+1)" },
+    { city: "London", address: "34 Chandlers Close, Feltham. Middx. London UK TW3 3QG", time: "GMT (UTC+0)" },
+    { city: "Singapore", address: "Suite No 7. Smith Street. Orchid. Singapore 408600", time: "SGT (UTC+8)" },
+    { city: "Pakistan", address: "Office No 4, 2nd Floor, Baber Plaza, 657 G1, Johar Town Lahore. Pakistan", time: "PKT (UTC+5)" },
 ];
 
 export function GlobalOffices() {

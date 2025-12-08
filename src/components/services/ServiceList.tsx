@@ -53,6 +53,14 @@ const servicesDetail = [
     features: ["Campaign Setup", "Ad Copywriting", "Bid Management", "A/B Testing"],
     color: "text-red-500",
   },
+  {
+    id: "social-media",
+    title: "Social Media Marketing",
+    image:"/social-media.png",
+    description: "We enhance your brand's visibility and engagement through strategic social media marketing campaigns, ensuring consistent growth and audience engagement.",
+    features: ["Campaign Setup", "Ad Copywriting", "Bid Management", "A/B Testing"],
+    color: "text-emerald-500",
+  },
 ];
 export function ServiceList() {
   const containerRef = useRef<HTMLDivElement>(null);
