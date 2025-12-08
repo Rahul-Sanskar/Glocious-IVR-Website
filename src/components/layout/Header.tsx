@@ -40,33 +40,9 @@ export function Header() {
       .from((linksRef.current?.children as HTMLCollection) || [], { y: -10, opacity: 0, stagger: 0.1, duration: 0.1 }, "-=0.1")
       .from(ctaRef.current, { x: 20, opacity: 0, duration: 0.1 }, "-=0.1");
 
-    // 2. Smart Scroll Logic
-    let lastScrollY = window.scrollY;
-    
-    const handleScroll = () => {
-      // CRITICAL: Do not hide header if mobile menu is open
-      if (mobileMenuOpen) return;
+    // 2. Smart Scroll Logic REMOVED per request
 
-      const currentScrollY = window.scrollY;
-      const header = headerRef.current;
-      
-      if (!header) return;
-
-      if (currentScrollY > lastScrollY && currentScrollY > 50) {
-        // Scrolling Down -> Hide
-        gsap.to(header, { yPercent: -100, duration: 0.3, ease: "power2.inOut", overwrite: true });
-      } else if (currentScrollY < lastScrollY || currentScrollY < 50) {
-        // Scrolling Up -> Show
-        gsap.to(header, { yPercent: 0, duration: 0.3, ease: "power2.inOut", overwrite: true });
-      }
-
-      lastScrollY = currentScrollY;
-    };
-
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
-
-  }, { scope: headerRef, dependencies: [mobileMenuOpen] }); // Add mobileMenuOpen dependency
+  }, { scope: headerRef }); // Removed dependencies array as we no longer need to track mobileMenuOpen inside GSAP
 
   return (
     <>
