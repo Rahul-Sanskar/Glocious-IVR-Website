@@ -18,7 +18,7 @@ export function GlobalOffices() {
                 <h3 className="text-4xl md:text-5xl font-bold font-heading">Global Presence.</h3>
             </div>
             
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                 {offices.map((office, i) => (
                     <div key={i} className="p-8 rounded-2xl bg-secondary/10 border border-white/5 hover:border-primary/50 transition-colors">
                         <h4 className="text-2xl font-bold font-heading mb-4 text-white">{office.city}</h4>
