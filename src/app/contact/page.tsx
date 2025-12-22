@@ -55,7 +55,7 @@ export default function ContactPage() {
                     <div className="w-full max-w-xs">
                         {/* We can re-use the button or just link directly */}
                         <a 
-                            href="https://docs.google.com/forms/u/0/" 
+                            href="https://forms.gle/3SBen6Khh7gMKVFz8" 
                             target="_blank" 
                             rel="noopener noreferrer"
                             className="flex items-center justify-center gap-2 w-full py-4 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all"
