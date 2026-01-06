@@ -6,14 +6,14 @@ import gsap from "gsap";
 import { Star } from "lucide-react";
 
 const testimonials = [
-  { text: "SoftBiz completely redefined our brand.", author: "CEO of TechCorp" },
-  { text: "The best engineering team we've ever worked with.", author: "CTO of StartupX" },
-  { text: "Radical creativity meets rock-solid code.", author: "Director at CreativeAgency" },
-  { text: "Our conversion rates doubled overnight.", author: "Head of Growth, ShopMax" },
-  { text: "A truly futuristic approach to web design.", author: "Founder, FutureLabs" },
-  { text: "They didn't just build a site; they built an experience.", author: "VP Marketing, BigBrand" },
-  { text: "Seamless execution from start to finish.", author: "Product Manager, SaaSCore" },
-  { text: "The 3D elements are mind-blowing.", author: "Design Lead, ArtStudio" },
+  { text: "They delivered exactly what we asked for, on time and within budget.", author: "Founder, E-commerce Startup" },
+  { text: "Clear communication throughout the project made collaboration easy.", author: "Marketing Director, Retail Brand" },
+  { text: "Our new website is faster, cleaner, and easier for customers to navigate.", author: "Owner, Local Service Business" },
+  { text: "The team took time to understand our goals before writing a single line of code.", author: "Operations Manager, B2B Company" },
+  { text: "Professional work with attention to the details that matter.", author: "Founder, Online Store" },
+  { text: "They helped us launch on schedule even with a tight timeline.", author: "Project Lead, Tech Startup" },
+  { text: "Reliable, responsive, and genuinely helpful throughout.", author: "CEO, Small Business" },
+  { text: "We appreciated their honest advice on what would actually work for our audience.", author: "Marketing Manager, Consumer Brand" },
 ];
 
 // Duplicate for infinite loop

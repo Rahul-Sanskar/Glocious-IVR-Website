@@ -14,42 +14,42 @@ const services = [
     slug: "web-development",
     icon: <Code size={40} />,
     title: "Web Development",
-    description: "Custom, high-performance websites built with Next.js and modern technologies.",
+    description: "Custom websites built with Next.js and React. Fast-loading, SEO-friendly, and designed to convert visitors.",
     color: "from-blue-500 to-cyan-500",
   },
   {
     slug: "shopify-solutions",
     icon: <ShoppingBag size={40} />,
     title: "Shopify Solutions",
-    description: "Expert Shopify store setup, customization, and app development for e-commerce.",
+    description: "Shopify store setup, custom themes, and app integrations. Everything you need to sell online.",
     color: "from-green-500 to-emerald-500",
   },
   {
     slug: "amazon-services",
     icon: <Globe size={40} />,
     title: "Amazon Services",
-    description: "Comprehensive Amazon FBA management, listing optimization, and PPC campaigns.",
+    description: "Amazon seller account management, listing optimization, and PPC campaigns to grow your marketplace presence.",
     color: "from-orange-500 to-yellow-500",
   },
   {
     slug: "digital-marketing",
     icon: <Megaphone size={40} />,
     title: "Digital Marketing",
-    description: "Data-driven marketing strategies including SEO, SEM, and content marketing.",
+    description: "SEO, content strategy, and search marketing to help customers find you organically.",
     color: "from-purple-500 to-pink-500",
   },
   {
     slug: "google-ads",
     icon: <BarChart3 size={40} />,
     title: "Google Ads",
-    description: "ROI-focused PPC campaigns to drive targeted traffic and conversions.",
+    description: "Google Ads campaign setup and management. We focus on getting you qualified leads, not just clicks.",
     color: "from-red-500 to-rose-500",
   },
   {
     slug: "social-media",
     icon: <Zap size={40} />,
     title: "Social Media",
-    description: "Engaging social media management and advertising across all major platforms.",
+    description: "Social media advertising and management across Meta, TikTok, and other platforms where your audience is.",
     color: "from-indigo-500 to-violet-500",
   },
 ];
@@ -77,10 +77,10 @@ export function Services() {
     <section ref={sectionRef} className="py-24 bg-background relative z-10">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-5xl font-bold font-heading mb-4">Our Expertise</h2>
-            <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-                Comprehensive digital solutions designed to elevate your brand and drive results.
-            </p>
+          <h2 className="text-3xl md:text-5xl font-bold font-heading mb-4">Our Expertise</h2>
+          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+            Comprehensive digital solutions designed to elevate your brand and drive results.
+          </p>
         </div>
 
         <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -101,7 +101,7 @@ export function Services() {
               <p className="text-muted-foreground leading-relaxed mb-8 flex-grow">
                 {service.description}
               </p>
-              
+
               <Link href={`/services/${service.slug}`} className="inline-flex items-center text-primary font-bold tracking-wide uppercase text-sm hover:text-accent transition-colors mt-auto">
                 Learn More <Code className="ml-2 w-4 h-4" />
               </Link>

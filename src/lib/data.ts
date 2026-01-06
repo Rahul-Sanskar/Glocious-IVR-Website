@@ -199,131 +199,131 @@ export const blogPosts = [
 export const caseStudies = [
   // --- Web Development Case Studies ---
   {
-    slug: "techcore-saas",
-    title: "TechCore: Enterprise SaaS Migration",
-    category: "SaaS",
-    description: "Migrating a legacy monolith to a microservices architecture for a Fortune 500 company.",
-    stats: { roi: "200%", timeframe: "12 Months" },
+    slug: "saas-platform-migration",
+    title: "SaaS Platform Modernization",
+    category: "Web Application",
+    description: "Representative project: Migrating an enterprise client from a legacy system to a modern microservices architecture.",
+    stats: { result: "Improved uptime", timeframe: "12 Months" },
     image: getDynamicImage("Enterprise Cloud Server Migration", "SaaS"),
     content: {
-      challenge: "TechCore's legacy system was unable to handle the increasing load, resulting in frequent downtime and slow response times.",
-      solution: "We re-architected the system using microservices, allowing for independent scaling and improved fault tolerance."
+      challenge: "An established software company needed to modernize their platform to handle growing user demand and reduce technical debt.",
+      solution: "We rebuilt the system using a microservices approach, improving scalability and reducing deployment complexity."
     }
   },
   {
-    slug: "fresheats-delivery",
-    title: "FreshEats: High-Scale Food Delivery App",
+    slug: "food-delivery-app",
+    title: "Food Delivery Platform",
     category: "Web App",
-    description: "Building a real-time delivery tracking system handling 10k concurrent users.",
-    stats: { roi: "180%", timeframe: "6 Months" },
+    description: "Representative project: Building a real-time delivery tracking system for a regional food delivery service.",
+    stats: { result: "Successful launch", timeframe: "6 Months" },
     image: getDynamicImage("Food Delivery App Scooter", "Mobile App"),
     content: {
-      challenge: "Real-time tracking was inaccurate and caused significant battery drain on user devices.",
-      solution: "Implemented efficient WebSocket connections and optimized geolocation updates to ensure accuracy with minimal battery usage."
+      challenge: "A growing delivery business needed a reliable tracking system that worked across different devices and connection speeds.",
+      solution: "Built an efficient real-time tracking system using WebSocket connections optimized for mobile performance."
     }
   },
 
   // --- Shopify Case Studies ---
   {
-    slug: "luxefit-ecommerce",
-    title: "LuxeFit: Scaling D2C Fashion",
+    slug: "fashion-ecommerce",
+    title: "Fashion E-commerce Redesign",
     category: "E-commerce",
-    description: "Scaling a D2C fashion brand from 6 to 7 figures using headless Shopify architecture.",
-    stats: { roi: "300%", timeframe: "3 Months" },
+    description: "Representative project: Rebuilding a direct-to-consumer fashion brand's online store using headless Shopify.",
+    stats: { result: "Improved conversion", timeframe: "3 Months" },
     image: getDynamicImage("Fashion Clothing Store Online", "Fashion"),
     content: {
-      challenge: "The existing platform was inflexible, limiting marketing campaigns and brand expression.",
-      solution: "Moved to a headless Shopify setup, giving the marketing team full control over the frontend while leveraging Shopify's robust backend."
+      challenge: "A fashion brand's existing platform was limiting their ability to customize the shopping experience and run marketing campaigns.",
+      solution: "Implemented a headless Shopify setup giving the team full control over the frontend while maintaining Shopify's robust backend."
     }
   },
   {
-    slug: "heritage-home",
-    title: "Heritage Home: Custom Furniture Configurator",
+    slug: "furniture-configurator",
+    title: "Custom Furniture Configurator",
     category: "Shopify",
-    description: "Increasing average order value by 40% with a 3D product customizer.",
-    stats: { roi: "150%", timeframe: "4 Months" },
+    description: "Representative project: Adding a 3D product customizer to a custom furniture retailer's Shopify store.",
+    stats: { result: "Higher order value", timeframe: "4 Months" },
     image: getDynamicImage("3D Furniture Configurator", "Interior Design"),
     content: {
-      challenge: "Customers were hesitant to buy custom furniture online without seeing the final product.",
-      solution: "Developed a 3D product configurator allowing users to visualize materials and finishes in real-time."
+      challenge: "Customers were hesitant to purchase custom furniture online without visualizing the final product.",
+      solution: "Developed a 3D product configurator allowing users to visualize materials and finishes before purchasing."
     }
   },
 
   // --- Amazon Case Studies ---
   {
-    slug: "urbangear-launch",
-    title: "UrbanGear: From Zero to Bestseller",
+    slug: "outdoor-brand-launch",
+    title: "Outdoor Brand Amazon Launch",
     category: "Amazon FBA",
-    description: "Launching a new outdoor brand and achieving the #1 Best Seller badge in 60 days.",
-    stats: { roi: "500%", timeframe: "2 Months" },
+    description: "Representative project: Launching a new outdoor gear brand on Amazon with PPC strategy and listing optimization.",
+    stats: { result: "Strong launch sales", timeframe: "3 Months" },
     image: getDynamicImage("Camping Gear Outdoor Adventure", "Outdoors"),
     content: {
-      challenge: "Launching in a saturated market with established competitors.",
-      solution: "Executed a targeted PPC campaign combined with influencer marketing to drive initial sales velocity and reviews."
+      challenge: "A new brand entering a competitive category needed to build visibility quickly without excessive ad spend.",
+      solution: "Developed a targeted PPC campaign with optimized listing content to drive initial sales and reviews."
     }
   },
   {
-    slug: "petlife-subscriptions",
-    title: "PetLife: Recurring Revenue Mastery",
+    slug: "pet-subscription-brand",
+    title: "Pet Brand Subscription Strategy",
     category: "Amazon FBA",
-    description: "Optimizing Subscribe & Save to build a loyal customer base of 50k subscribers.",
-    stats: { roi: "210%", timeframe: "8 Months" },
+    description: "Representative project: Optimizing Subscribe & Save for a pet supplies brand to improve customer retention.",
+    stats: { result: "Improved retention", timeframe: "8 Months" },
     image: getDynamicImage("Happy Dog Pet Food Subscription", "Pets"),
     content: {
-      challenge: "High customer churn rate and low repeat purchase frequency.",
-      solution: "Optimized the Subscribe & Save program with exclusive discounts and personalized email follow-ups."
+      challenge: "A pet supplies seller was seeing high customer churn and low repeat purchase rates.",
+      solution: "Optimized the Subscribe & Save program with strategic discounts and follow-up email sequences."
     }
   },
 
   // --- SEO Case Studies ---
   {
-    slug: "neonbank-fintech",
-    title: "NeonBank: Redefining the Digital Wallet",
-    category: "FinTech",
-    description: "A complete digital overhaul for a leading fintech startup, resulting in massive user acquisition.",
-    stats: { roi: "145%", timeframe: "6 Months" },
+    slug: "fintech-seo-growth",
+    title: "Fintech SEO Strategy",
+    category: "SEO",
+    description: "Representative project: Building organic search traffic for a fintech startup through content and technical SEO.",
+    stats: { result: "Increased traffic", timeframe: "6 Months" },
     image: getDynamicImage("Neon Cyberpunk Digital Wallet", "Fintech"),
     content: {
-      challenge: "Low organic visibility and high customer acquisition costs.",
-      solution: "Implemented a comprehensive SEO strategy focusing on long-tail keywords and high-quality educational content."
+      challenge: "A fintech company had low organic visibility and was relying heavily on paid acquisition.",
+      solution: "Implemented comprehensive SEO focusing on educational content and technical site improvements."
     }
   },
   {
-    slug: "dr-smile-local",
-    title: "Dr. Smile: Dominating Local Search",
+    slug: "dental-local-seo",
+    title: "Dental Practice Local SEO",
     category: "Local SEO",
-    description: "Ranking #1 in the Google Map Pack for 15+ dental keywords in a competitive metro area.",
-    stats: { roi: "400%", timeframe: "5 Months" },
+    description: "Representative project: Improving local search rankings for a dental practice in a competitive metro area.",
+    stats: { result: "Map Pack ranking", timeframe: "5 Months" },
     image: getDynamicImage("Dental Clinic Map Pin", "Medical"),
     content: {
-      challenge: "Invisible in local search results despite high service quality.",
+      challenge: "A dental practice was invisible in local search results despite excellent service quality.",
       solution: "Optimized Google Business Profile, managed local citations, and implemented a review generation strategy."
     }
   },
 
   // --- PPC Case Studies ---
   {
-    slug: "autofix-leads",
-    title: "AutoFix: Hyper-Local Lead Gen",
+    slug: "auto-repair-leads",
+    title: "Auto Repair Lead Generation",
     category: "PPC",
-    description: "Reducing cost-per-lead by 60% for a national franchise of auto repair shops.",
-    stats: { roi: "250%", timeframe: "3 Months" },
+    description: "Representative project: Reducing cost-per-lead for an auto repair franchise through targeted Google Ads.",
+    stats: { result: "Lower cost-per-lead", timeframe: "3 Months" },
     image: getDynamicImage("Car Mechanic Auto Repair", "Automotive"),
     content: {
-      challenge: "High cost-per-lead and low lead quality.",
-      solution: "Refined geographic targeting and implemented negative keyword lists to filter out irrelevant traffic."
+      challenge: "An auto repair business was paying too much per lead with many low-quality inquiries.",
+      solution: "Refined geographic targeting and implemented negative keyword lists to filter irrelevant traffic."
     }
   },
   {
-    slug: "clickflow-saas",
-    title: "ClickFlow: B2B SaaS Demo Bookings",
+    slug: "b2b-saas-demos",
+    title: "B2B SaaS Demo Campaigns",
     category: "PPC",
-    description: "Using LinkedIn and Google Ads to fill the sales pipeline for an enterprise software.",
-    stats: { roi: "320%", timeframe: "6 Months" },
+    description: "Representative project: Using LinkedIn and Google Ads to drive demo requests for enterprise software.",
+    stats: { result: "Qualified pipeline", timeframe: "6 Months" },
     image: getDynamicImage("B2B Sales Funnel Chart", "Business"),
     content: {
-      challenge: "Difficulty reaching decision-makers in target enterprises.",
-      solution: "Utilized LinkedIn Account-Based Marketing (ABM) to target specific job titles and companies."
+      challenge: "An enterprise software company struggled to reach decision-makers at target companies.",
+      solution: "Used LinkedIn Account-Based Marketing to target specific job titles and companies with relevant messaging."
     }
   }
 ];

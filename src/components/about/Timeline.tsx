@@ -8,13 +8,13 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const milestones = [
-  { year: "2018", title: "Inception", description: "SoftBiz was founded with a vision to redefine digital experiences." },
-  { year: "2019", title: "First Global Client", description: "Expanded operations to serve clients in Europe and North America." },
-  { year: "2020", title: "Team Expansion", description: " grew to 20+ experts in web development and digital marketing." },
-  { year: "2021", title: "Award Winning", description: "Recognized as Top Digital Agency by industry leaders." },
-  { year: "2022", title: "Tech Innovation", description: "Launched proprietary internal tools for performance optimization." },
-  { year: "2023", title: "Market Dominance", description: "Helped over 100+ brands scale their revenue by 300%." },
-  { year: "2024", title: "Future Ready", description: "Integrating AI and machine learning into our core service offerings." },
+  { year: "2018", title: "Founded", description: "SoftBiz was established with a focus on web development and digital solutions." },
+  { year: "2019", title: "Growing the Team", description: "Expanded our capabilities by bringing on specialists in e-commerce and marketing." },
+  { year: "2020", title: "Remote-First", description: "Transitioned to a fully remote team, allowing us to serve clients across multiple time zones." },
+  { year: "2021", title: "E-commerce Focus", description: "Deepened our expertise in Shopify and Amazon marketplace solutions." },
+  { year: "2022", title: "Process Refinement", description: "Developed standardized workflows to improve project delivery and client communication." },
+  { year: "2023", title: "Service Expansion", description: "Added comprehensive digital marketing and SEO services to our offerings." },
+  { year: "2024", title: "Looking Ahead", description: "Continuing to grow while maintaining the quality and attention that got us here." },
 ];
 
 export function Timeline() {

@@ -14,8 +14,8 @@ const mappedStudies = caseStudies.map(study => ({
   title: study.title,
   client: study.slug.split('-')[0], // derived client name
   category: study.category,
-  stat: study.stats.roi,
-  statLabel: "ROI",
+  stat: study.stats.result,
+  statLabel: "Result",
   image: study.image,
   slug: study.slug,
   color: study.category === "E-commerce" ? "text-green-400" : study.category === "SaaS" ? "text-blue-400" : "text-purple-400"
@@ -46,8 +46,8 @@ export function CaseStudyList() {
             onClick={() => setFilter(cat)}
             className={cn(
               "px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 border border-transparent",
-              filter === cat 
-                ? "bg-primary text-primary-foreground" 
+              filter === cat
+                ? "bg-primary text-primary-foreground"
                 : "bg-secondary text-secondary-foreground hover:bg-secondary/80 hover:border-white/10"
             )}
           >
@@ -58,9 +58,9 @@ export function CaseStudyList() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
         {filteredStudies.map((study, index) => (
-            <div key={study.slug} className="cs-card">
-                 <CaseStudyCard {...study} />
-            </div>
+          <div key={study.slug} className="cs-card">
+            <CaseStudyCard {...study} />
+          </div>
         ))}
       </div>
     </div>
