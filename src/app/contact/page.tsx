@@ -33,7 +33,7 @@ export default function ContactPage() {
                         <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-secondary/30 hover:bg-primary/10 transition-colors border border-transparent hover:border-primary/30">
                             <Phone className="w-8 h-8 text-primary mb-4" />
                             <h3 className="font-bold mb-1">Phone</h3>
-                            <a href="tel:+14254778523" className="text-sm text-muted-foreground hover:text-white">+1 (425) 477-8523</a>
+                            <a href="tel:+18332281750" className="text-sm text-muted-foreground hover:text-white">+18332281750</a>
                         </div>
                         <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-secondary/30 hover:bg-primary/10 transition-colors border border-transparent hover:border-primary/30">
                             <MapPin className="w-8 h-8 text-primary mb-4" />
