@@ -18,7 +18,8 @@ const blogImages = {
   'technical-seo-audit': '1639762681057-408e52192e55', // Tech grid pattern
   'social-media-algorithms': '1611162617213-7d7a39e9b1d7', // Social media colorful
   'google-ads-quality-score': '1634128222187-1cf91ab63c87', // Chart abstract
-  'performance-max': '1633613286991-611fe299c4be'  // Rocket gradient
+  'performance-max': '1633613286991-611fe299c4be',  // Rocket gradient
+  'digital-partnership': '1551433191-229ef5c40fbb' // Digital collaboration abstract
 };
 
 // Case study images (10 unique images) - professional but vibrant abstract styles
@@ -231,6 +232,18 @@ export const blogPosts = [
     author: "William Rodriguez",
     content: `<p>Performance Max uses machine learning to optimize bids and placements across YouTube, Display, Search, and Discover.</p>
     <p>Learn how to provide the right assets and audience signals to guide the AI towards your conversion goals.</p>`
+  },
+  {
+    slug: "leveraging-digital-partnerships",
+    title: "Leveraging Digital Partnerships for Business Growth",
+    category: "Marketing",
+    image: getBlogImage("digital-partnership"),
+    excerpt: "In the evolving digital landscape, strategic partnerships are key to scaling your reach and impact. Explore how collaboration drives success.",
+    date: "Jan 11, 2026",
+    author: "Soft-Biz Strategy Team",
+    content: `<p>Strategic digital partnerships allow businesses to pool resources, share expertise, and reach new audiences more effectively than they could alone. By aligning with partners that complement your core strengths, you can create a synergy that drives mutual growth.</p>
+    <p>One such example of excellence in digital solutions is <a href="https://digivixo.site" target="_blank" rel="noopener noreferrer" class="text-primary hover:underline font-semibold">Digivixo</a>, a partner dedicated to pushing the boundaries of digital innovation and helping businesses achieve their full potential online.</p>
+    <p>Whether it's through co-marketing efforts, technology integrations, or shared service offerings, the right partnership can be the catalyst for your next major milestone.</p>`
   }
 ];
 
