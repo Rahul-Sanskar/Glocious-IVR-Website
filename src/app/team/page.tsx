@@ -4,6 +4,23 @@ import { TeamGrid } from "@/components/team/TeamGrid";
 import { CultureStats } from "@/components/team/CultureStats";
 import { PerksGrid } from "@/components/team/PerksGrid";
 import { JoinMission } from "@/components/team/JoinMission";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Meet the SoftBiz Team — Developers, Designers & Marketers",
+  description: "Meet the people behind SoftBiz — developers, designers, and marketers who care about your results as much as you do.",
+  openGraph: {
+    title: "Meet the SoftBiz Team — Developers, Designers & Marketers",
+    description: "Meet the people behind SoftBiz — developers, designers, and marketers who care about your results as much as you do.",
+    url: "https://www.thesoftbiz.com/team",
+  },
+  twitter: {
+    title: "Meet the SoftBiz Team — Developers, Designers & Marketers",
+  },
+  alternates: {
+    canonical: "https://www.thesoftbiz.com/team",
+  },
+};
 
 export default function TeamPage() {
   return (

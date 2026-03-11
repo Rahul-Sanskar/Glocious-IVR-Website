@@ -93,7 +93,7 @@ export function Hero() {
           </h1>
 
           <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed mb-10 max-w-xl border-l-2 border-primary/20 pl-6 transform-gpu">
-            Web development, e-commerce, and digital marketing solutions for growing businesses.
+            We build high-performance websites, Shopify stores, and marketing systems for startups and growing brands that want results, not just deliverables.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-6 transform-gpu">
@@ -116,6 +116,7 @@ export function Hero() {
       {/* Scroll Indicator */}
       <div className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50 animate-bounce">
         <span className="text-[10px] font-mono tracking-widest uppercase">Scroll to Init</span>
+        <span className="text-[9px] font-mono tracking-wider text-muted-foreground/60 mt-0.5">↓ Explore our work</span>
         <div className="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent" />
       </div>
     </section>

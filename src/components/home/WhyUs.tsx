@@ -82,12 +82,15 @@ export function WhyUs() {
                 </div>
               ))}
             </div>
+            <p className="text-sm text-muted-foreground mt-8 border-l-2 border-primary/30 pl-4 leading-relaxed">
+              Every project comes with full documentation, a dedicated point of contact, and a 30-day post-launch support window — no extra charge.
+            </p>
           </div>
 
           {/* Right: Visual/Image (Placeholder for now, could be a 3D element or Image) */}
           <div className="hidden lg:flex items-center justify-center bg-white/5 rounded-3xl border border-white/10 aspect-square">
             {/* Abstract Visual Representation */}
-            <Image alt="about us image" src={'/about.webp'} width={900} height={900} className="w-full h-full object-cover rounded-lg" />
+            <Image alt="SoftBiz team workspace" src={'/about.webp'} width={900} height={900} className="w-full h-full object-cover rounded-lg" />
           </div>
 
         </div>

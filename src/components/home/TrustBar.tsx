@@ -28,7 +28,7 @@ export function TrustBar() {
   return (
     <section ref={containerRef} className="py-12 bg-black border-y border-white/10 overflow-hidden relative z-10">
       <div className="container mx-auto px-6 mb-8 text-center">
-            <p className="text-sm font-medium text-muted-foreground uppercase tracking-widest">Trusted by industry leaders</p>
+            <p className="text-sm font-medium text-muted-foreground uppercase tracking-widest">Our Tech Stack</p>
       </div>
       <div className="relative w-full overflow-hidden">
         <div className="absolute left-0 top-0 bottom-0 w-24 z-10 bg-gradient-to-r from-black to-transparent"></div>

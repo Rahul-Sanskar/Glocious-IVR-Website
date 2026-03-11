@@ -8,10 +8,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
-  { label: "Years of Experience", value: 6, suffix: "+", prefix: "" },
-  { label: "Projects Completed", value: 50, suffix: "+" },
+  { label: "Years of Experience", value: 7, suffix: "+", prefix: "" },
+  { label: "Projects Completed", value: 80, suffix: "+" },
   { label: "Industries Served", value: 12, suffix: "" },
-  { label: "Client Retention Rate", value: 90, suffix: "%" },
+  { label: "Client Retention Rate", value: 95, suffix: "%" },
 ];
 
 export function Stats() {

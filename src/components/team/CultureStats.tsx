@@ -8,10 +8,10 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const stats = [
-    { label: "Coffee Consumed", value: "Too Much" },
+    { label: "Coffee Consumed", value: "8,400+" },
     { label: "Average Age", value: "26" },
-    { label: "Countries Represented", value: "12" },
-    { label: "Dogs in Office", value: "5" },
+    { label: "Timezones Covered", value: "3" },
+    { label: "Tech Stacks Mastered", value: "12" },
 ];
 
 export function CultureStats() {

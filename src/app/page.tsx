@@ -41,7 +41,7 @@ export default function Home() {
         
         {/* Final CTA */}
         <section className="py-32 container mx-auto px-6 text-center">
-            <h2 className="text-5xl md:text-8xl font-bold font-heading mb-8">Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Ascend?</span></h2>
+            <h2 className="text-5xl md:text-8xl font-bold font-heading mb-8">Ready to <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">Build Something</span> That Actually Works?</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-12">
                 Your digital future is waiting. Let's build something extraordinary together.
             </p>

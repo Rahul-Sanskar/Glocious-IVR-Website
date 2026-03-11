@@ -115,7 +115,7 @@ const servicesData: Record<string, {
         "Checkout Experience Customization",
         "Speed Optimization (Core Web Vitals)",
         "GA4 Enhanced E-commerce Tracking",
-        "Admin Training Training Session"
+        "Admin Training Session"
     ],
     process: [
         { step: "01", title: "Store Audit", desc: "Analyzing your current store or requirements to identify growth opportunities." },

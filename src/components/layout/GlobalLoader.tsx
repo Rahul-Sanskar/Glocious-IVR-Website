@@ -1,39 +1,42 @@
 "use client";
 
 import { useProgress } from "@react-three/drei";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useRef } from "react";
 
 export function GlobalLoader() {
   const { progress, active } = useProgress();
   const [isReady, setIsReady] = useState(false);
   const [simulatedProgress, setSimulatedProgress] = useState(0);
+  const hardCapRef = useRef<ReturnType<typeof setTimeout> | null>(null);
 
   useEffect(() => {
+    // Hard cap: loader always disappears within 800ms
+    hardCapRef.current = setTimeout(() => setIsReady(true), 800);
+
     // Simulate loading because our 3D scene is procedural (no assets to load)
-    // allowing "useProgress" to stay at 0.
     const interval = setInterval(() => {
         setSimulatedProgress(prev => {
             if (prev >= 100) {
                 clearInterval(interval);
                 return 100;
             }
-            // Add random increment
             return prev + Math.random() * 10; 
         });
     }, 100);
 
-    return () => clearInterval(interval);
+    return () => {
+      clearInterval(interval);
+      if (hardCapRef.current) clearTimeout(hardCapRef.current);
+    };
   }, []);
 
   useEffect(() => {
     if (simulatedProgress >= 100) {
-        // Short delay to show 100%
-        setTimeout(() => setIsReady(true), 500); 
+        setTimeout(() => setIsReady(true), 300); 
     }
   }, [simulatedProgress]);
 
-  // Use simulated progress unless real progress is somehow slower (unlikely here)
-  const displayProgress = Math.max(simulatedProgress, progress);
+  const displayProgress = Math.min(100, Math.max(simulatedProgress, progress));
 
   return (
     <div 

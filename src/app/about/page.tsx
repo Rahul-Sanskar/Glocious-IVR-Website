@@ -5,6 +5,23 @@ import { Values } from "@/components/about/Values";
 import { CultureGallery } from "@/components/about/CultureGallery";
 import { OfficeTour } from "@/components/about/OfficeTour";
 import { Philosophy } from "@/components/about/Philosophy";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "About SoftBiz — Our Story, Team & Values",
+  description: "Learn about SoftBiz — our story, values, and the team behind every project. A digital agency built on transparency, craft, and results.",
+  openGraph: {
+    title: "About SoftBiz — Our Story, Team & Values",
+    description: "Learn about SoftBiz — our story, values, and the team behind every project.",
+    url: "https://www.thesoftbiz.com/about",
+  },
+  twitter: {
+    title: "About SoftBiz — Our Story, Team & Values",
+  },
+  alternates: {
+    canonical: "https://www.thesoftbiz.com/about",
+  },
+};
 
 export default function AboutPage() {
   return (

@@ -6,18 +6,19 @@ import gsap from "gsap";
 import { Star } from "lucide-react";
 
 const testimonials = [
-  { text: "They delivered exactly what we asked for, on time and within budget.", author: "Founder, E-commerce Startup" },
-  { text: "Clear communication throughout the project made collaboration easy.", author: "Marketing Director, Retail Brand" },
-  { text: "Our new website is faster, cleaner, and easier for customers to navigate.", author: "Owner, Local Service Business" },
-  { text: "The team took time to understand our goals before writing a single line of code.", author: "Operations Manager, B2B Company" },
-  { text: "Professional work with attention to the details that matter.", author: "Founder, Online Store" },
-  { text: "They helped us launch on schedule even with a tight timeline.", author: "Project Lead, Tech Startup" },
-  { text: "Reliable, responsive, and genuinely helpful throughout.", author: "CEO, Small Business" },
-  { text: "We appreciated their honest advice on what would actually work for our audience.", author: "Marketing Manager, Consumer Brand" },
+  { text: "They delivered exactly what we asked for, on time and within budget. Genuinely impressed with the whole process.", author: "James R. — Founder, E-commerce Startup" },
+  { text: "Clear communication throughout the project made collaboration easy. We always knew what was happening and why.", author: "Sarah M. — Marketing Director, Retail Brand" },
+  { text: "Our new website is faster, cleaner, and easier for customers to navigate. Traffic is up 40% month-over-month.", author: "David K. — Owner, Local Service Business" },
+  { text: "The team took time to understand our goals before writing a single line of code. That strategic approach made all the difference.", author: "Priya N. — Operations Manager, B2B Company" },
+  { text: "They rebuilt our Shopify store from scratch and our conversion rate went from 1.2% to 3.1% in 60 days.", author: "Marcus T. — DTC Brand Founder" },
+  { text: "They helped us launch on schedule even with a tight timeline. Zero drama, all delivery.", author: "Tom B. — Project Lead, Tech Startup" },
+  { text: "Reliable, responsive, and genuinely helpful throughout. Best agency experience we've had.", author: "Lisa C. — CEO, Small Business" },
+  { text: "We appreciated their honest advice on what would actually work for our audience — no upsells, just results.", author: "Ryan H. — Marketing Manager, Consumer Brand" },
+  { text: "Our Google Ads CPC dropped by 38% in the first month after they restructured our campaigns. Exceptional ROI.", author: "Nadia F. — Founder, Online Store" },
 ];
 
-// Duplicate for infinite loop
-const reviews = [...testimonials, ...testimonials, ...testimonials];
+// Duplicate for infinite loop — 2 sets is sufficient for seamless scroll
+const reviews = [...testimonials, ...testimonials];
 
 export function TestimonialWall() {
   const row1Ref = useRef<HTMLDivElement>(null);

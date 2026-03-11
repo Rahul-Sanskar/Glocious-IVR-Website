@@ -32,7 +32,7 @@ const team = [
     name: "Muhammad Hassan", 
     role: "CMO, Marketing Head", 
     dept: "Marketing", 
-    image: "https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?auto=format&fit=crop&q=80&w=400",
+    image: "/hassan-avatar.png",
     quote: "Marketing that creates impact." 
   }
 ];
@@ -84,7 +84,7 @@ export function TeamGrid() {
           >
             <img 
                 src={member.image} 
-                alt={member.name}
+                alt={`${member.name}, ${member.role} at SoftBiz`}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 group-hover:filter group-hover:grayscale"
             />
             
@@ -99,10 +99,10 @@ export function TeamGrid() {
                 <div className="h-0 opacity-0 group-hover:h-auto group-hover:opacity-100 transition-all duration-300 overflow-hidden">
                     <p className="text-sm text-gray-300 italic mb-4">"{member.quote}"</p>
                     <div className="flex space-x-4">
-                        <a href={member.linkedin} className="text-white hover:text-primary transition-colors"><Linkedin size={20} /></a>
-                        <a href={member.instagram} className="text-white hover:text-primary transition-colors"><Instagram size={20} /></a>
-                        <a href={member.mail} className="text-white hover:text-primary transition-colors"><Mail size={20} /></a>
-                        {member.name === "Abdullah Nadeem" && <a href={member.github} className="text-white hover:text-primary transition-colors"><Github size={20} /></a>}
+                        <a href={member.linkedin} aria-label={`${member.name} on LinkedIn`} className="text-white hover:text-primary transition-colors"><Linkedin size={20} /></a>
+                        <a href={member.instagram} aria-label={`${member.name} on Instagram`} className="text-white hover:text-primary transition-colors"><Instagram size={20} /></a>
+                        <a href={`mailto:${member.mail}`} aria-label={`Email ${member.name}`} className="text-white hover:text-primary transition-colors"><Mail size={20} /></a>
+                        {member.name === "Abdullah Nadeem" && <a href={member.github} aria-label={`${member.name} on GitHub`} className="text-white hover:text-primary transition-colors"><Github size={20} /></a>}
                     </div>
                 </div>
             </div>

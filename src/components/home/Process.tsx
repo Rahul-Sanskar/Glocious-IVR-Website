@@ -81,7 +81,7 @@ export function Process() {
       <div className="container mx-auto px-6 relative z-10">
         <div className="mb-24 max-w-2xl">
             <h2 className="text-sm font-mono font-bold text-accent tracking-widest uppercase mb-4">The Methodology</h2>
-            <h3 className="text-4xl md:text-6xl font-bold font-heading">From Concept to <br/><span className="text-secondary-foreground">Domination.</span></h3>
+            <h3 className="text-4xl md:text-6xl font-bold font-heading">From Concept to <br/><span className="text-secondary-foreground">Launch — and Beyond.</span></h3>
         </div>
 
         <div ref={containerRef} className="relative max-w-4xl mx-auto pl-8 md:pl-0">

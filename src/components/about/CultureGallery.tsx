@@ -4,11 +4,11 @@ import React from "react";
 import { cn } from "@/lib/utils";
 
 const photos = [
-  { src: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=800", alt: "Team Collaboration", span: "row-span-2" },
-  { src: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?auto=format&fit=crop&q=80&w=800", alt: "Office Vibe", span: "row-span-1" },
-  { src: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?auto=format&fit=crop&q=80&w=800", alt: "Strategy Meeting", span: "row-span-1" },
-  { src: "https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&q=80&w=800", alt: "Brainstorming", span: "row-span-2" },
-  { src: "https://images.unsplash.com/photo-1531482615713-2afd69097998?auto=format&fit=crop&q=80&w=800", alt: "Coding Session", span: "row-span-1" },
+  { src: "/culture-1.jpg", alt: "Code on dark monitors in an agency workspace", span: "row-span-2" },
+  { src: "/culture-2.jpg", alt: "Circuit board close-up representing technical precision", span: "row-span-1" },
+  { src: "/culture-3.jpg", alt: "Digital data flow and code visualization", span: "row-span-1" },
+  { src: "/culture-4.jpg", alt: "Modern dark agency studio workspace", span: "row-span-2" },
+  { src: "/culture-5.jpg", alt: "Abstract 3D geometric forms representing creative problem-solving", span: "row-span-1" },
 ];
 
 export function CultureGallery() {

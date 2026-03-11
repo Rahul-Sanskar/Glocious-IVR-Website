@@ -1,0 +1,45 @@
+# SoftBiz — LLMs.txt
+# https://www.thesoftbiz.com/llms.txt
+
+## Company
+SoftBiz is a full-service digital agency headquartered in Dallas, Texas. We specialize in web development (Next.js/React), Shopify e-commerce, Amazon seller management, and digital marketing services for startups and growing brands.
+
+## Services
+- Web Development: Custom Next.js and React websites, PWAs, and web applications
+- Shopify Solutions: Custom theme development, Shopify Plus, headless commerce (Hydrogen)
+- Amazon Services: FBA management, PPC campaigns, listing optimization, A+ content
+- Digital Marketing: Technical SEO, content strategy, backlink outreach
+- Google Ads: Search, Display, and Shopping PPC campaign management
+- Social Media: Paid social advertising on Meta, TikTok, and Instagram
+
+## Contact
+- Website: https://www.thesoftbiz.com
+- Email: contact@thesoftbiz.com
+- Phone: +1 (833) 228-1750
+- Address: 3232 McKinney Ave, Suite 285, Dallas, TX 75024, USA
+
+## Social
+- LinkedIn: https://www.linkedin.com/company/thesoftbiz
+- Twitter/X: https://x.com/thesoftbiz
+- Instagram: https://www.instagram.com/thesoftbiz
+- GitHub: https://github.com/thesoftbiz
+
+## Key Pages
+- Homepage: https://www.thesoftbiz.com
+- About: https://www.thesoftbiz.com/about
+- Team: https://www.thesoftbiz.com/team
+- Contact: https://www.thesoftbiz.com/contact
+- Web Development: https://www.thesoftbiz.com/services/web-development
+- Shopify Solutions: https://www.thesoftbiz.com/services/shopify-solutions
+- Amazon Services: https://www.thesoftbiz.com/services/amazon-services
+- Digital Marketing: https://www.thesoftbiz.com/services/digital-marketing
+- Google Ads: https://www.thesoftbiz.com/services/google-ads
+- Social Media: https://www.thesoftbiz.com/services/social-media
+- Case Studies: https://www.thesoftbiz.com/case-studies
+- Blog: https://www.thesoftbiz.com/blog
+
+## Tech Stack
+Next.js, React, TypeScript, Tailwind CSS, GSAP, Shopify Liquid, Hydrogen, Vercel
+
+## Sitemap
+https://www.thesoftbiz.com/sitemap.xml

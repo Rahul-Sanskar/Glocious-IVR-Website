@@ -1,11 +1,29 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
-import { ContactForm } from "@/components/contact/ContactForm";
 import { GlobalReach } from "@/components/contact/GlobalReach";
 import { GlobalOffices } from "@/components/contact/GlobalOffices";
 import { SocialHub } from "@/components/contact/SocialHub";
-import { FAQ } from "@/components/home/FAQ"; // Reusing FAQ as requested
-import { Mail, MapPin, Phone, ArrowUpRight } from "lucide-react";
+import { FAQ } from "@/components/home/FAQ";
+import { Mail, MapPin, Phone } from "lucide-react";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "Contact SoftBiz \u2014 Start Your Project Today",
+  description:
+    "Get in touch with the SoftBiz team. Tell us about your project and we'll respond within one business day.",
+  openGraph: {
+    title: "Contact SoftBiz \u2014 Start Your Project Today",
+    description:
+      "Get in touch with the SoftBiz team. Tell us about your project and we'll respond within one business day.",
+    url: "https://www.thesoftbiz.com/contact",
+  },
+  twitter: {
+    title: "Contact SoftBiz \u2014 Start Your Project Today",
+  },
+  alternates: {
+    canonical: "https://www.thesoftbiz.com/contact",
+  },
+};
 
 export default function ContactPage() {
   return (
@@ -33,35 +51,85 @@ export default function ContactPage() {
                         <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-secondary/30 hover:bg-primary/10 transition-colors border border-transparent hover:border-primary/30">
                             <Phone className="w-8 h-8 text-primary mb-4" />
                             <h3 className="font-bold mb-1">Phone</h3>
-                            <a href="tel:+18332281750" className="text-sm text-muted-foreground hover:text-white">+18332281750</a>
+                            <a href="tel:+18332281750" className="text-sm text-muted-foreground hover:text-white">+1 (833) 228-1750</a>
                         </div>
                         <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-secondary/30 hover:bg-primary/10 transition-colors border border-transparent hover:border-primary/30">
                             <MapPin className="w-8 h-8 text-primary mb-4" />
                             <h3 className="font-bold mb-1">HQ</h3>
-                            <p className="text-sm text-muted-foreground">3232 McKinney Ave, Suite No285, 4th Floor. Dallas. Tx. 75024. USA</p>
+                            <p className="text-sm text-muted-foreground">3232 McKinney Ave, Suite 285, Dallas, TX 75024</p>
                         </div>
                      </div>
 
                      <GlobalReach />
                 </div>
 
-                {/* Form Placeholder / Direct Link */}
-                <div className="bg-secondary/10 p-8 md:p-12 rounded-3xl border border-white/5 text-center flex flex-col items-center justify-center">
-                    <h3 className="text-2xl font-bold font-heading mb-4">Send us a Message</h3>
-                    <p className="text-muted-foreground mb-8 max-w-sm">
-                        Prefer to fill out a form? Click below to open our secure contact form.
-                    </p>
-                    <div className="w-full max-w-xs">
-                        {/* We can re-use the button or just link directly */}
-                        <a 
-                            href="https://forms.gle/3SBen6Khh7gMKVFz8" 
-                            target="_blank" 
-                            rel="noopener noreferrer"
-                            className="flex items-center justify-center gap-2 w-full py-4 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all"
-                        >
-                            Open Contact Form <ArrowUpRight className="w-4 h-4" />
-                        </a>
-                    </div>
+                {/* Native Contact Form */}
+                <div className="bg-secondary/10 p-8 md:p-12 rounded-3xl border border-white/5">
+                    <h3 className="text-2xl font-bold font-heading mb-2">Send us a Message</h3>
+                    <p className="text-muted-foreground mb-8 text-sm">We respond within one business day.</p>
+                     <form
+                      action="https://formsubmit.co/musanadeem2580@gmail.com"
+                      method="POST"
+                      className="space-y-5"
+                    >
+                      {/* FormSubmit configuration */}
+                      <input type="hidden" name="_subject" value="New Project Inquiry — SoftBiz" />
+                      <input type="hidden" name="_captcha" value="false" />
+                      <input type="hidden" name="_template" value="table" />
+                      <input type="hidden" name="_next" value="https://www.thesoftbiz.com/contact?submitted=true" />
+
+                      <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                        <div>
+                          <label htmlFor="contact-name" className="block text-sm font-medium mb-1.5">Name <span className="text-primary">*</span></label>
+                          <input
+                            id="contact-name"
+                            name="name"
+                            type="text"
+                            required
+                            placeholder="Your full name"
+                            className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-colors"
+                          />
+                        </div>
+                        <div>
+                          <label htmlFor="contact-email" className="block text-sm font-medium mb-1.5">Email <span className="text-primary">*</span></label>
+                          <input
+                            id="contact-email"
+                            name="email"
+                            type="email"
+                            required
+                            placeholder="you@company.com"
+                            className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-colors"
+                          />
+                        </div>
+                      </div>
+                      <div>
+                        <label htmlFor="contact-subject" className="block text-sm font-medium mb-1.5">Subject</label>
+                        <input
+                          id="contact-subject"
+                          name="subject"
+                          type="text"
+                          placeholder="What's this about?"
+                          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-colors"
+                        />
+                      </div>
+                      <div>
+                        <label htmlFor="contact-message" className="block text-sm font-medium mb-1.5">Message <span className="text-primary">*</span></label>
+                        <textarea
+                          id="contact-message"
+                          name="message"
+                          required
+                          rows={5}
+                          placeholder="Tell us about your project, goals, and timeline..."
+                          className="w-full px-4 py-3 bg-white/5 border border-white/10 rounded-lg text-sm text-foreground placeholder:text-muted-foreground focus:outline-none focus:border-primary/50 focus:ring-1 focus:ring-primary/30 transition-colors resize-none"
+                        />
+                      </div>
+                      <button
+                        type="submit"
+                        className="w-full py-4 bg-primary text-white font-bold rounded-lg hover:bg-primary/90 transition-all focus:outline-none focus:ring-2 focus:ring-primary focus:ring-offset-2 focus:ring-offset-background min-h-[44px]"
+                      >
+                        Send Message
+                      </button>
+                    </form>
                 </div>
             </div>
         </section>
@@ -77,3 +145,4 @@ export default function ContactPage() {
     </div>
   );
 }
+
