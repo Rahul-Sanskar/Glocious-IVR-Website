@@ -1,15 +1,15 @@
 import type { MetadataRoute } from "next";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const BASE_URL = "https://www.thesoftbiz.com";
+  const BASE_URL = "https://www.glocious.com";
 
   const servicePages = [
-    "web-development",
-    "shopify-solutions",
-    "amazon-services",
-    "digital-marketing",
-    "google-ads",
-    "social-media",
+    "ivr-solutions",
+    "cloud-telephony",
+    "call-analytics",
+    "missed-call-handling",
+    "crm-integration",
+    "multi-level-ivr",
   ];
 
   const staticPages = [

@@ -1,54 +1,50 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { ReactLenis } from "@/lib/lenis"; // We need to create this wrapper
+import { ReactLenis } from "@/lib/lenis";
 import { TransitionProvider } from "@/context/TransitionContext";
 import { TransitionOverlay } from "@/components/ui/TransitionOverlay";
 import { GlobalLoader } from "@/components/layout/GlobalLoader";
 import Script from "next/script";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
-
-const BASE_URL = "https://www.thesoftbiz.com";
+const GlociousBase_URL = "https://www.glocious.com";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(BASE_URL),
+  metadataBase: new URL(GlociousBase_URL),
   title: {
-    default: "Web Development, Shopify & Digital Marketing Agency | SoftBiz",
-    template: "%s | SoftBiz",
+    default: "Glocious Infotech | IVR & Cloud Telephony Solutions",
+    template: "%s | Glocious Infotech",
   },
   description:
-    "SoftBiz builds high-performance websites, Shopify stores, and digital marketing campaigns for growing brands. Get a free project quote.",
+    "Glocious Infotech provides enterprise IVR service provider India, cloud telephony, interactive voice response systems, and call routing solutions for businesses.",
+  keywords:
+    "IVR service provider India, IVR solutions, cloud telephony, IVR telephony, business IVR, interactive voice response, call routing, IVR system for business, Glocious Infotech IVR",
   openGraph: {
     type: "website",
-    siteName: "SoftBiz",
-    title: "Web Development, Shopify & Digital Marketing Agency | SoftBiz",
+    siteName: "Glocious Infotech",
+    title: "Glocious Infotech | IVR & Cloud Telephony Solutions",
     description:
-      "SoftBiz builds high-performance websites, Shopify stores, and digital marketing campaigns for growing brands. Get a free project quote.",
-    url: BASE_URL,
+      "Glocious Infotech provides enterprise IVR service provider India, cloud telephony, interactive voice response systems, and call routing solutions for businesses.",
+    url: GlociousBase_URL,
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "SoftBiz — Web Development · Shopify · Digital Marketing",
+        alt: "Glocious Infotech — IVR and Cloud Telephony Solutions",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Web Development, Shopify & Digital Marketing Agency | SoftBiz",
+    title: "Glocious Infotech | IVR & Cloud Telephony Solutions",
     description:
-      "SoftBiz builds high-performance websites, Shopify stores, and digital marketing campaigns for growing brands.",
+      "Glocious Infotech provides enterprise IVR service provider India, cloud telephony, interactive voice response systems, and call routing solutions for businesses.",
     images: ["/og-image.png"],
-    site: "@thesoftbiz",
+    site: "@glociousinfotech",
   },
   alternates: {
-    canonical: BASE_URL,
+    canonical: GlociousBase_URL,
   },
   robots: {
     index: true,
@@ -56,30 +52,11 @@ export const metadata: Metadata = {
   },
 };
 
-const localBusinessSchema = {
-  "@context": "https://schema.org",
-  "@type": "ProfessionalService",
-  name: "SoftBiz",
-  url: BASE_URL,
-  telephone: "+18332281750",
-  email: "contact@thesoftbiz.com",
-  address: {
-    "@type": "PostalAddress",
-    streetAddress: "3232 McKinney Ave, Suite 285",
-    addressLocality: "Dallas",
-    addressRegion: "TX",
-    postalCode: "75024",
-    addressCountry: "US",
-  },
-  sameAs: [
-    "https://www.linkedin.com/company/thesoftbiz",
-    "https://twitter.com/thesoftbiz",
-    "https://www.instagram.com/thesoftbiz",
-    "https://github.com/thesoftbiz",
-  ],
-  areaServed: "Worldwide",
-  priceRange: "$$",
-};
+const inter = Inter({
+  subsets: ["latin"],
+  variable: "--font-inter",
+  display: "swap",
+});
 
 export default function RootLayout({
   children,
@@ -96,19 +73,40 @@ export default function RootLayout({
           strategy="afterInteractive"
         />
       </head>
-      <ReactLenis root>
-        <body className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
-             <GlobalLoader />
-             <TransitionProvider>
-                <TransitionOverlay />
-                {/* Header will go here */}
-                <main className="min-h-screen">
-                    {children}
-                </main>
-                {/* Footer will go here */}
-             </TransitionProvider>
-        </body>
-      </ReactLenis>
+      <body className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
+        <GlobalLoader />
+        <TransitionProvider>
+          <TransitionOverlay />
+          <main className="min-h-screen">
+            {children}
+          </main>
+        </TransitionProvider>
+      </body>
     </html>
   );
 }
+
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "ProfessionalService",
+  name: "Glocious Infotech",
+  url: GlociousBase_URL,
+  telephone: "+18332281750",
+  email: "contact@glocious.com",
+  address: {
+    "@type": "PostalAddress",
+    streetAddress: "3232 McKinney Ave, Suite 285",
+    addressLocality: "Dallas",
+    addressRegion: "TX",
+    postalCode: "75024",
+    addressCountry: "US",
+  },
+  sameAs: [
+    "https://www.linkedin.com/company/glocious-infotech",
+    "https://twitter.com/glociousinfotech",
+    "https://www.instagram.com/glociousinfotech",
+    "https://github.com/glociousinfotech",
+  ],
+  areaServed: "Worldwide",
+  priceRange: "$$",
+};

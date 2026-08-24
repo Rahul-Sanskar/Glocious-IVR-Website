@@ -5,51 +5,51 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
-import { Code, ShoppingBag, BarChart3, Globe, Zap, Megaphone } from "lucide-react";
+import { Code, Phone, BarChart3, Globe, Zap, Megaphone } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
 const services = [
   {
-    slug: "web-development",
-    icon: <Code size={40} />,
-    title: "Web Development",
-    description: "Custom websites built with Next.js and React. Fast-loading, SEO-friendly, and designed to convert visitors.",
+    slug: "ivr-solutions",
+    icon: <Phone size={40} />,
+    title: "IVR Solutions",
+    description: "Intelligent Interactive Voice Response systems that automate customer interactions, reduce manual workload, and provide 24/7 support availability.",
     color: "from-blue-500 to-cyan-500",
   },
   {
-    slug: "shopify-solutions",
-    icon: <ShoppingBag size={40} />,
-    title: "Shopify Solutions",
-    description: "Shopify store setup, custom themes, and app integrations. Everything you need to sell online.",
+    slug: "cloud-telephony",
+    icon: <Globe size={40} />,
+    title: "Cloud Telephony",
+    description: "Scalable cloud-based telephony infrastructure with virtual numbers, click-to-call functionality, and seamless integration with existing business systems.",
     color: "from-green-500 to-emerald-500",
   },
   {
-    slug: "amazon-services",
-    icon: <Globe size={40} />,
-    title: "Amazon Services",
-    description: "Amazon seller account management, listing optimization, and PPC campaigns to grow your marketplace presence.",
+    slug: "call-analytics",
+    icon: <BarChart3 size={40} />,
+    title: "Call Analytics",
+    description: "Real-time call tracking, performance metrics, and intelligent insights to optimize customer engagement and improve business decisions.",
     color: "from-orange-500 to-yellow-500",
   },
   {
-    slug: "digital-marketing",
+    slug: "missed-call-handling",
     icon: <Megaphone size={40} />,
-    title: "Digital Marketing",
-    description: "SEO, content strategy, and search marketing to help customers find you organically.",
+    title: "Missed Call Handling",
+    description: "Automatic callback systems that capture missed call information, provide follow-up notifications, and ensure no customer opportunity is lost.",
     color: "from-purple-500 to-pink-500",
   },
   {
-    slug: "google-ads",
-    icon: <BarChart3 size={40} />,
-    title: "Google Ads",
-    description: "Google Ads campaign setup and management. We focus on getting you qualified leads, not just clicks.",
+    slug: "crm-integration",
+    icon: <Code size={40} />,
+    title: "CRM Integration",
+    description: "Seamless integration with your existing CRM systems to provide context-aware calling, customer history tracking, and personalized interactions.",
     color: "from-red-500 to-rose-500",
   },
   {
-    slug: "social-media",
+    slug: "multi-level-ivr",
     icon: <Zap size={40} />,
-    title: "Social Media",
-    description: "Social media advertising and management across Meta, TikTok, and other platforms where your audience is.",
+    title: "Multi-Level IVR",
+    description: "Advanced hierarchical menu systems with intelligent routing, natural language processing, and adaptive learning for complex customer journeys.",
     color: "from-indigo-500 to-violet-500",
   },
 ];
@@ -77,9 +77,9 @@ export function Services() {
     <section ref={sectionRef} className="py-24 bg-background relative z-10">
       <div className="container mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-5xl font-bold font-heading mb-4">Our Expertise</h2>
+          <h2 className="text-3xl md:text-5xl font-bold font-heading mb-4">Our IVR Services</h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
-            Comprehensive digital solutions designed to elevate your brand and drive results.
+            Comprehensive cloud telephony solutions designed to transform your customer communication through intelligent automation and real-time analytics.
           </p>
         </div>
 

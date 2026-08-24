@@ -15,7 +15,7 @@ export default function TermsPage() {
             <section>
               <h2 className="text-2xl font-bold mb-4">1. Agreement to Terms</h2>
               <p className="text-muted-foreground">
-                These Terms of Service constitute a legally binding agreement between you and SoftBiz (&quot;we,&quot; &quot;us&quot; or &quot;our&quot;)
+                These Terms of Service constitute a legally binding agreement between you and Glocious Infotech ("we," "us" or "our")
                 regarding your access to and use of our website and services. By using our website or engaging our services,
                 you agree to be bound by these terms.
               </p>
@@ -24,8 +24,8 @@ export default function TermsPage() {
             <section>
               <h2 className="text-2xl font-bold mb-4">2. Services Overview</h2>
               <p className="text-muted-foreground">
-                SoftBiz provides web development, e-commerce solutions, digital marketing, and related services as described on our website
-                and in individual project agreements. Specific deliverables, timelines, and terms for each project are documented in separate
+                Glocious Infotech provides IVR solutions, cloud telephony, bulk SMS, voice SMS, WhatsApp marketing, bulk email, lead generation, and digital marketing services
+                as described on our website and in individual project agreements. Specific deliverables, timelines, and terms for each project are documented in separate
                 proposals or contracts agreed upon before work begins.
               </p>
             </section>
@@ -66,7 +66,7 @@ export default function TermsPage() {
             <section>
               <h2 className="text-2xl font-bold mb-4">7. Limitation of Liability</h2>
               <p className="text-muted-foreground">
-                To the maximum extent permitted by law, SoftBiz shall not be liable for any indirect, incidental, special, or consequential damages
+                To the maximum extent permitted by law, Glocious Infotech shall not be liable for any indirect, incidental, special, or consequential damages
                 arising from the use of our services. Our total liability shall not exceed the amount paid by the client for the specific service.
               </p>
             </section>
@@ -90,7 +90,7 @@ export default function TermsPage() {
             <section>
               <h2 className="text-2xl font-bold mb-4">10. Contact</h2>
               <p className="text-muted-foreground">
-                For questions about these Terms of Service, please contact us at: <strong>legal@thesoftbiz.com</strong>
+                For questions about these Terms of Service, please contact us at: <strong>legal@glocious.com</strong>
               </p>
             </section>
           </div>

@@ -1,8 +1,8 @@
-# Soft-Biz Site
+# Glocious Infotech IVR
 
-A high-performance, animation-driven agency portfolio built with Next.js 15, React 19, and Three.js. Optimized for Core Web Vitals while delivering an immersive 3D experience.
+A high-performance, animation-driven IVR solutions website built with Next.js 15, React 19, and Three.js. Optimized for Core Web Vitals while delivering an immersive 3D experience.
 
-**Live:** https://thesoftbiz.com
+**Live:** https://glocious.infotech
 
 ---
 
@@ -136,8 +136,8 @@ src/
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/theabdullahnadeem/Soft-Biz-Site.git
-   cd Soft-Biz-Site
+   git clone https://github.com/theabdullahnadeem/Glocious-IVR-Site.git
+   cd Glocious-IVR-Site
    ```
 
 2. **Install dependencies**
@@ -169,8 +169,8 @@ NEXT_PUBLIC_CONTACT_FORM_ENDPOINT=https://api.your-service.com/submit
 NEXT_PUBLIC_ANALYTICS_ID=your-google-analytics-id
 
 # Theme (optional - can be managed in globals.css)
-NEXT_PUBLIC_BRAND_NAME=SoftBiz
-NEXT_PUBLIC_BASE_URL=https://thesoftbiz.com
+NEXT_PUBLIC_BRAND_NAME=Glocious
+NEXT_PUBLIC_BASE_URL=https://glocious.infotech
 ```
 
 **Note**: Environment variables prefixed with `NEXT_PUBLIC_` are exposed to the browser.

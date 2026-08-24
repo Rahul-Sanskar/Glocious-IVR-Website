@@ -17,7 +17,7 @@ export function Manifesto() {
         start: "top 80%",
         end: "bottom 20%",
         toggleActions: "play none none reverse",
-      }
+      },
     });
 
     tl.from(".manifesto-line", {
@@ -28,7 +28,6 @@ export function Manifesto() {
       ease: "power4.out",
       skewY: 7,
     });
-
   }, { scope: containerRef });
 
   return (
@@ -38,13 +37,13 @@ export function Manifesto() {
           <div className="overflow-hidden"><span className="manifesto-line block">We believe in</span></div>
           <div className="overflow-hidden"><span className="manifesto-line block text-transparent bg-clip-text bg-gradient-to-r from-primary to-accent">doing it right.</span></div>
           <div className="overflow-hidden"><span className="manifesto-line block mt-8 text-2xl md:text-4xl font-light text-muted-foreground leading-relaxed">
-            Good work takes time, attention, and honest communication.
+            Glocious Infotech builds enterprise IVR and cloud telephony solutions that transform customer engagement through intelligent automation, real-time analytics, and seamless integration.
           </span></div>
-          <div className="overflow-hidden"><span className="manifesto-line block text-2xl md:text-4xl font-light text-muted-foreground leading-relaxed">
-            We build digital products that actually work—<strong className="text-white font-medium">reliable, fast,</strong> and <strong className="text-white font-medium">built to last</strong>.
+          <div className="overflow-hidden"><span className="manifesto-line block mt-8 text-2xl md:text-4xl font-light text-muted-foreground leading-relaxed">
+            Our systems deliver measurable results: 40% lower operational costs, 30% higher customer satisfaction, and 95% retention through reliable, scalable communications.
           </span></div>
           <div className="overflow-hidden"><span className="manifesto-line block mt-8 text-xl md:text-2xl text-primary font-mono uppercase tracking-widest">
-            // Quality Over Shortcuts
+            Quality Over Shortcuts
           </span></div>
         </h2>
       </div>

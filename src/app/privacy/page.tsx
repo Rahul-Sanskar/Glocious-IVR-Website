@@ -15,7 +15,7 @@ export default function PrivacyPage() {
             <section>
               <h2 className="text-2xl font-bold mb-4">1. Introduction</h2>
               <p className="text-muted-foreground">
-                At SoftBiz ("we", "us", or "our"), we respect your privacy and are committed to protecting your personal data.
+                At Glocious Infotech ("we", "us", or "our"), we respect your privacy and are committed to protecting your personal data.
                 This privacy policy explains how we collect, use, and safeguard information when you visit our website or use our services.
               </p>
             </section>
@@ -82,7 +82,7 @@ export default function PrivacyPage() {
               <h2 className="text-2xl font-bold mb-4">8. Contact Us</h2>
               <p className="text-muted-foreground">
                 If you have questions about this privacy policy or how we handle your data, please contact us at:
-                <strong> privacy@thesoftbiz.com</strong>
+                <strong> privacy@glocious.com</strong>
               </p>
             </section>
 
