@@ -72,14 +72,14 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/testimonials" className="hover:text-primary transition-colors">
+                <a href="#testimonials" className="hover:text-primary transition-colors">
                   Testimonials
-                </Link>
+                </a>
               </li>
               <li>
-                <Link href="/faq" className="hover:text-primary transition-colors">
+                <a href="#faq" className="hover:text-primary transition-colors">
                   FAQ
-                </Link>
+                </a>
               </li>
               <li>
                 <Link href="/contact" className="hover:text-primary transition-colors">
@@ -93,7 +93,7 @@ export function Footer() {
             <h3 className="font-semibold mb-4 text-white">Services</h3>
             <ul className="space-y-2 text-sm text-muted-foreground">
               <li>
-                <Link href="/services/ivr" className="hover:text-primary transition-colors">
+                <Link href="/services/ivr-solutions" className="hover:text-primary transition-colors">
                   Telephony / IVR
                 </Link>
               </li>
@@ -103,18 +103,23 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                <Link href="/services/bulk-sms" className="hover:text-primary transition-colors">
-                  Bulk SMS
+                <Link href="/services/call-analytics" className="hover:text-primary transition-colors">
+                  Call Analytics
                 </Link>
               </li>
               <li>
-                <Link href="/services/whatsapp-marketing" className="hover:text-primary transition-colors">
-                  WhatsApp Marketing
+                <Link href="/services/missed-call-handling" className="hover:text-primary transition-colors">
+                  Missed Call Handling
                 </Link>
               </li>
               <li>
-                <Link href="/services/bulk-email" className="hover:text-primary transition-colors">
-                  Bulk Email
+                <Link href="/services/crm-integration" className="hover:text-primary transition-colors">
+                  CRM Integration
+                </Link>
+              </li>
+              <li>
+                <Link href="/services/multi-level-ivr" className="hover:text-primary transition-colors">
+                  Multi-Level IVR
                 </Link>
               </li>
             </ul>
