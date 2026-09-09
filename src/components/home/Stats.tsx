@@ -63,9 +63,15 @@ export function Stats() {
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-full h-px bg-gradient-to-r from-transparent via-white/10 to-transparent" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="grid grid-cols-2 lg:grid-cols-5 gap-12 lg:gap-8 text-center">
+        {/* FIX: grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 — last item spans sm:col-span-3 to stay centred on tablet */}
+        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-12 lg:gap-8 text-center">
           {stats.map((stat, index) => (
-            <div key={index} className="stat-item flex flex-col items-center">
+            <div
+              key={index}
+              className={`stat-item flex flex-col items-center${
+                index === stats.length - 1 ? " col-span-2 sm:col-span-1" : ""
+              }`}
+            >
               <div className="text-4xl md:text-5xl lg:text-6xl font-bold font-heading text-white mb-3 tracking-tighter tabular-nums">
                 <span 
                   className="stat-value" 

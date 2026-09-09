@@ -4,139 +4,202 @@ import React, { useRef } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import { 
-  Award, 
-  Users, 
-  ShieldCheck, 
-  Zap, 
-  Headphones, 
-  Layers, 
-  Target 
+import {
+  Award,
+  Users,
+  ShieldCheck,
+  Zap,
+  Headphones,
+  Layers,
+  Target,
+  ArrowRight,
 } from "lucide-react";
+import Link from "next/link";
 
 gsap.registerPlugin(ScrollTrigger);
 
-/* ------------------------------------------------------------------ */
-/*  Verified Glocious Content (Based on Specification)                */
-/* ------------------------------------------------------------------ */
-
 const whyGlocious = [
   {
-    icon: <Award className="w-6 h-6" />,
-    title: "12+ Years Industry Expertise",
-    description: "A decade-long track record of delivering specialized communication technology solutions across global markets.",
+    icon: Award,
+    title: "12+ Years Expertise",
+    description:
+      "A decade-long track record delivering specialised communication technology across global markets.",
   },
   {
-    icon: <Users className="w-6 h-6" />,
-    title: "Customer-Centric Approach",
-    description: "Developing intelligent systems that bridge the gap between businesses and their customers through innovative telephony.",
+    icon: Users,
+    title: "Customer-Centric",
+    description:
+      "Intelligent systems that bridge businesses and customers through innovative telephony solutions.",
   },
   {
-    icon: <ShieldCheck className="w-6 h-6" />,
-    title: "Reliable Communication",
-    description: "Enterprise-grade security protocols and robust cloud telephony infrastructure for high-availability service.",
+    icon: ShieldCheck,
+    title: "Reliable & Secure",
+    description:
+      "Enterprise-grade security and robust cloud infrastructure for high-availability 99.9% uptime.",
   },
   {
-    icon: <Layers className="w-6 h-6" />,
+    icon: Layers,
     title: "Scalable Infrastructure",
-    description: "Platforms built to scale seamlessly, supporting business growth from startups to multi-national operations.",
+    description:
+      "Platforms that grow with you — from startup to multi-national operation without re-architecting.",
   },
   {
-    icon: <Headphones className="w-6 h-6" />,
-    title: "Professional 24/7 Support",
-    description: "Technical assistance available around the clock to ensure your communication channels are always operational.",
+    icon: Headphones,
+    title: "24/7 Support",
+    description:
+      "Round-the-clock technical assistance to keep your communication channels always operational.",
   },
   {
-    icon: <Zap className="w-6 h-6" />,
-    title: "Multi-Industry Experience",
-    description: "Proven expertise serving healthcare, finance, retail, and logistics with industry-specific IVR solutions.",
+    icon: Zap,
+    title: "Multi-Industry",
+    description:
+      "Proven expertise across healthcare, finance, retail, and logistics with vertical-specific IVR.",
   },
   {
-    icon: <Target className="w-6 h-6" />,
-    title: "Results-Oriented Solutions",
-    description: "Systems designed to increase operational efficiency, reduce costs, and improve customer satisfaction scores.",
+    icon: Target,
+    title: "Results-Oriented",
+    description:
+      "Systems built to reduce costs, increase efficiency, and measurably improve satisfaction scores.",
   },
 ];
 
 export function WhyUs() {
   const sectionRef = useRef<HTMLElement>(null);
-  const gridRef = useRef<HTMLDivElement>(null);
 
   useGSAP(() => {
-    const tl = gsap.timeline({
+    // Set all animated elements invisible first so there's a defined start state
+    gsap.set(".why-header > *", { opacity: 0, y: 24 });
+    gsap.set(".why-card", { opacity: 0, y: 32, scale: 0.95 });
+    gsap.set(".why-icon", { scale: 0, rotate: -12 });
+
+    /* Header */
+    gsap.to(".why-header > *", {
+      y: 0,
+      opacity: 1,
+      stagger: 0.1,
+      duration: 0.75,
+      ease: "power3.out",
       scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 70%",
+        trigger: ".why-header",
+        start: "top 88%",
         toggleActions: "play none none reverse",
+        onLeaveBack: () =>
+          gsap.set(".why-header > *", { opacity: 0, y: 24 }),
       },
     });
 
-    tl.from(".why-header", {
-      y: 30,
-      opacity: 0,
-      duration: 0.8,
-      ease: "power3.out",
-    })
-    .from(".why-card", {
-      scale: 0.9,
-      opacity: 0,
-      stagger: 0.1,
+    /* Cards */
+    gsap.to(".why-card", {
+      y: 0,
+      opacity: 1,
+      scale: 1,
+      stagger: { each: 0.07, from: "start" },
       duration: 0.6,
-      ease: "back.out(1.4)",
-    }, "-=0.4");
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".why-grid",
+        start: "top 85%",
+        toggleActions: "play none none reverse",
+        onLeaveBack: () =>
+          gsap.set(".why-card", { opacity: 0, y: 32, scale: 0.95 }),
+      },
+    });
+
+    /* Icons pop in after cards land */
+    gsap.to(".why-icon", {
+      scale: 1,
+      rotate: 0,
+      stagger: 0.06,
+      duration: 0.4,
+      ease: "back.out(2.5)",
+      delay: 0.18,
+      scrollTrigger: {
+        trigger: ".why-grid",
+        start: "top 85%",
+        toggleActions: "play none none reverse",
+        onLeaveBack: () =>
+          gsap.set(".why-icon", { scale: 0, rotate: -12 }),
+      },
+    });
   }, { scope: sectionRef });
 
   return (
-    <section ref={sectionRef} className="py-24 md:py-32 bg-secondary/30 relative overflow-hidden">
-      {/* Immersive design elements */}
-      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[120px] -translate-y-1/2 translate-x-1/4" />
-      <div className="absolute bottom-0 left-0 w-[600px] h-[600px] bg-accent/5 rounded-full blur-[140px] translate-y-1/3 -translate-x-1/4" />
+    <section
+      ref={sectionRef}
+      className="py-16 md:py-20 bg-secondary/30 relative overflow-hidden"
+    >
+      {/* Ambient blobs */}
+      <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-primary/5 rounded-full blur-[130px] -translate-y-1/2 translate-x-1/4 pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-accent/5 rounded-full blur-[130px] translate-y-1/3 -translate-x-1/4 pointer-events-none" />
 
       <div className="container mx-auto px-6 relative z-10">
-        <div className="why-header max-w-3xl mb-16">
-          <h2 className="text-sm font-mono font-bold text-primary tracking-widest uppercase mb-4">The Glocious Advantage</h2>
-          <h3 className="text-4xl md:text-5xl font-bold font-heading leading-tight mb-6">
-            Why Choose <span className="text-primary">Glocious Infotech</span>?
-          </h3>
-          <p className="text-lg text-muted-foreground leading-relaxed">
-            We don't just provide telephony; we build the intelligent infrastructure that drives meaningful customer engagement. Our focus is on technical excellence and real-world results.
+        {/* Header */}
+        <div className="why-header max-w-2xl mb-10">
+          <p className="text-sm font-mono font-bold text-primary tracking-widest uppercase mb-3">
+            The Glocious Advantage
+          </p>
+          <h2 className="text-3xl md:text-5xl font-bold font-heading leading-tight mb-4">
+            Why Choose{" "}
+            <span className="text-primary">Glocious Infotech</span>?
+          </h2>
+          <p className="text-base text-muted-foreground leading-relaxed">
+            We don&apos;t just provide telephony — we build the intelligent
+            infrastructure that drives meaningful customer engagement.
           </p>
         </div>
 
-        <div ref={gridRef} className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+        {/* Grid */}
+        <div className="why-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           {whyGlocious.map((item, index) => (
-            <div 
-              key={index} 
-              className={`why-card group p-8 rounded-2xl bg-white/5 border border-white/10 backdrop-blur-sm hover:bg-white/10 hover:border-primary/30 transition-all duration-300 ${
-                index === whyGlocious.length - 1 ? "lg:col-span-1 xl:col-span-2" : ""
-              }`}
+            <div
+              key={index}
+              className={`why-card group relative p-6 rounded-2xl bg-white/4 border border-white/8 backdrop-blur-sm
+                hover:bg-white/8 hover:border-primary/30 hover:-translate-y-1
+                transition-all duration-300 cursor-default
+                ${index === whyGlocious.length - 1 ? "xl:col-span-2" : ""}`}
             >
-              <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-6 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
-                {item.icon}
+              {/* Hover gradient sweep */}
+              <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-primary/0 via-primary/0 to-primary/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
+
+              <div className="why-icon relative z-10 w-11 h-11 rounded-xl bg-primary/10 flex items-center justify-center text-primary mb-5 group-hover:bg-primary/20 group-hover:scale-110 group-hover:rotate-3 transition-all duration-300">
+                <item.icon className="w-5 h-5" />
               </div>
-              <h4 className="text-xl font-bold mb-3 group-hover:text-primary transition-colors duration-300">
+
+              <h3 className="relative z-10 text-base font-bold mb-2 group-hover:text-primary transition-colors duration-300 leading-snug">
                 {item.title}
-              </h4>
-              <p className="text-sm text-muted-foreground leading-relaxed">
+              </h3>
+              <p className="relative z-10 text-sm text-muted-foreground leading-relaxed">
                 {item.description}
               </p>
             </div>
           ))}
-          
-          {/* Central Visual CTA card */}
-          <div className="why-card relative p-8 rounded-2xl bg-primary text-white flex flex-col justify-between overflow-hidden group">
+
+          {/* CTA card */}
+          <div className="why-card xl:col-span-2 relative p-6 rounded-2xl bg-primary text-white flex flex-col justify-between overflow-hidden group min-h-[200px]">
+            {/* Animated rings */}
+            <div className="absolute -top-16 -right-16 w-48 h-48 rounded-full border border-white/10 group-hover:scale-150 transition-transform duration-700" />
+            <div className="absolute -top-8 -right-8 w-32 h-32 rounded-full border border-white/10 group-hover:scale-150 transition-transform duration-500" />
+            <div className="absolute inset-0 bg-gradient-to-br from-black/20 via-transparent to-transparent" />
+
             <div className="relative z-10">
-              <h4 className="text-2xl font-bold mb-4">Ready to optimize your communication?</h4>
-              <p className="text-white/80 text-sm mb-8">
-                Join 15,000+ businesses who trust our intelligent IVR solutions.
+              <p className="text-xs font-mono uppercase tracking-widest text-white/60 mb-3">
+                Get started today
+              </p>
+              <h3 className="text-xl font-bold mb-2 leading-snug">
+                Ready to optimise your communication?
+              </h3>
+              <p className="text-white/75 text-sm">
+                Join 15,000+ businesses using our intelligent IVR platform.
               </p>
             </div>
-            <button className="relative z-10 self-start px-6 py-3 bg-white text-primary rounded-full font-bold text-sm hover:bg-white/90 transition-colors">
+
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
+              className="relative z-10 inline-flex items-center gap-2 mt-5 self-start px-5 py-2.5 bg-white text-primary rounded-full font-bold text-sm hover:bg-white/90 hover:gap-3 transition-all duration-200 group/btn"
+            >
               Get Started
+              <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform" />
             </button>
-            
-            {/* Decorative background for the CTA card */}
-            <div className="absolute top-0 right-0 w-32 h-32 bg-white/10 rounded-full -mr-16 -mt-16 blur-2xl group-hover:scale-150 transition-transform duration-500" />
           </div>
         </div>
       </div>

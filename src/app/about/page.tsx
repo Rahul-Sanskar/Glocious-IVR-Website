@@ -1,5 +1,6 @@
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
+import { Eye, Sparkles, TrendingUp } from "lucide-react";
 import { Metadata } from "next";
 
 const BASE_URL = "https://www.glocious.com";
@@ -42,9 +43,7 @@ export default function AboutPage() {
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               <div className="p-6 rounded-xl bg-secondary/30 border border-white/10">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                  </svg>
+                  <Eye className="w-6 h-6 text-primary" aria-hidden="true" />
                 </div>
                 <h3 className="font-bold mb-2">Transparency</h3>
                 <p className="text-muted-foreground text-sm">
@@ -53,9 +52,7 @@ export default function AboutPage() {
               </div>
               <div className="p-6 rounded-xl bg-secondary/30 border border-white/10">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                  </svg>
+                  <Sparkles className="w-6 h-6 text-primary" aria-hidden="true" />
                 </div>
                 <h3 className="font-bold mb-2">Craft</h3>
                 <p className="text-muted-foreground text-sm">
@@ -64,13 +61,11 @@ export default function AboutPage() {
               </div>
               <div className="p-6 rounded-xl bg-secondary/30 border border-white/10">
                 <div className="w-12 h-12 rounded-xl bg-primary/10 flex items-center justify-center mb-4">
-                  <svg className="w-6 h-6 text-primary" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                  </svg>
+                  <TrendingUp className="w-6 h-6 text-primary" aria-hidden="true" />
                 </div>
                 <h3 className="font-bold mb-2">Results</h3>
                 <p className="text-muted-foreground text-sm">
-                  We measure our success by the success of our clients' businesses.
+                  We measure our success by the success of our clients&apos; businesses.
                 </p>
               </div>
             </div>
@@ -82,33 +77,44 @@ export default function AboutPage() {
               Meet the founders and experts who drive Glocious Infotech forward, combining technical excellence with industry experience.
             </p>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-              {/* Team member cards would go here */}
               <div className="p-6 rounded-xl bg-secondary/30 border border-white/10 text-center">
-                <div className="w-16 h-16 rounded-full mx-auto mb-4 bg-primary/10 flex items-center justify-center">
-                  <svg className="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                  </svg>
+                <div className="w-20 h-20 rounded-full mx-auto mb-4 overflow-hidden ring-2 ring-primary/30">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/hassan-avatar.png"
+                    alt="Hassan — Founder & CEO of Glocious Infotech"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h4 className="font-bold mb-2">Founder & CEO</h4>
-                <p className="text-sm text-muted-foreground">Glocious Leadership</p>
+                <h4 className="font-bold mb-1">Hassan</h4>
+                <p className="text-sm text-primary font-medium mb-2">Founder &amp; CEO</p>
+                <p className="text-xs text-muted-foreground">Driving vision and strategy for Glocious Infotech&apos;s global IVR solutions.</p>
               </div>
               <div className="p-6 rounded-xl bg-secondary/30 border border-white/10 text-center">
-                <div className="w-16 h-16 rounded-full mx-auto mb-4 bg-primary/10 flex items-center justify-center">
-                  <svg className="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                  </svg>
+                <div className="w-20 h-20 rounded-full mx-auto mb-4 overflow-hidden ring-2 ring-primary/30">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/shahid.png"
+                    alt="Shahid — CTO of Glocious Infotech"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h4 className="font-bold mb-2">CTO</h4>
-                <p className="text-sm text-muted-foreground">Technical Leadership</p>
+                <h4 className="font-bold mb-1">Shahid</h4>
+                <p className="text-sm text-primary font-medium mb-2">CTO</p>
+                <p className="text-xs text-muted-foreground">Leading technical architecture and cloud telephony infrastructure.</p>
               </div>
               <div className="p-6 rounded-xl bg-secondary/30 border border-white/10 text-center">
-                <div className="w-16 h-16 rounded-full mx-auto mb-4 bg-primary/10 flex items-center justify-center">
-                  <svg className="w-8 h-8 text-primary" viewBox="0 0 24 24" fill="currentColor">
-                    <path d="M12 2L2 7l10 5 10-5-10-5z" />
-                  </svg>
+                <div className="w-20 h-20 rounded-full mx-auto mb-4 overflow-hidden ring-2 ring-primary/30">
+                  {/* eslint-disable-next-line @next/next/no-img-element */}
+                  <img
+                    src="/abdullah.jpg"
+                    alt="Abdullah — COO of Glocious Infotech"
+                    className="w-full h-full object-cover"
+                  />
                 </div>
-                <h4 className="font-bold mb-2">COO</h4>
-                <p className="text-sm text-muted-foreground">Operations Leadership</p>
+                <h4 className="font-bold mb-1">Abdullah</h4>
+                <p className="text-sm text-primary font-medium mb-2">COO</p>
+                <p className="text-xs text-muted-foreground">Overseeing day-to-day operations and client delivery excellence.</p>
               </div>
             </div>
           </section>

@@ -5,7 +5,7 @@ import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Link from "next/link";
-import { Code, Phone, BarChart3, Globe, Zap, Megaphone } from "lucide-react";
+import { ArrowRight, Phone, BarChart3, Globe, Zap, Megaphone, Code } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -103,7 +103,7 @@ export function Services() {
               </p>
 
               <Link href={`/services/${service.slug}`} className="inline-flex items-center text-primary font-bold tracking-wide uppercase text-sm hover:text-accent transition-colors mt-auto">
-                Learn More <Code className="ml-2 w-4 h-4" />
+                Learn More <ArrowRight className="ml-2 w-4 h-4" />
               </Link>
             </div>
           ))}

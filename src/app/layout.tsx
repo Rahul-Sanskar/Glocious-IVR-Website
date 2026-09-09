@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import "./globals.css";
 import { ReactLenis } from "@/lib/lenis";
 import { TransitionProvider } from "@/context/TransitionContext";
+import { ThemeProvider } from "@/context/ThemeContext";
 import { TransitionOverlay } from "@/components/ui/TransitionOverlay";
 import { GlobalLoader } from "@/components/layout/GlobalLoader";
 import Script from "next/script";
@@ -52,11 +53,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/icon.png", type: "image/png", sizes: "32x32" },
-      { url: "/icon.png", type: "image/png", sizes: "192x192" },
+      { url: "/glocious-icon.png", type: "image/png", sizes: "32x32" },
+      { url: "/glocious-icon.png", type: "image/png", sizes: "192x192" },
     ],
-    apple: [{ url: "/icon.png", sizes: "180x180" }],
-    shortcut: ["/icon.png"],
+    apple: [{ url: "/glocious-icon.png", sizes: "180x180" }],
+    shortcut: ["/glocious-icon.png"],
   },
 };
 
@@ -83,12 +84,12 @@ export default function RootLayout({
       </head>
       <body className="bg-background text-foreground selection:bg-primary selection:text-primary-foreground">
         <GlobalLoader />
-        <TransitionProvider>
-          <TransitionOverlay />
-          <main className="min-h-screen">
+        <ThemeProvider>
+          <TransitionProvider>
+            <TransitionOverlay />
             {children}
-          </main>
-        </TransitionProvider>
+          </TransitionProvider>
+        </ThemeProvider>
       </body>
     </html>
   );
@@ -99,15 +100,15 @@ const localBusinessSchema = {
   "@type": "ProfessionalService",
   name: "Glocious Infotech",
   url: GlociousBase_URL,
-  telephone: "+18332281750",
-  email: "contact@glocious.com",
+  telephone: "+919999114347",
+  email: "kazim@glocious.com",
   address: {
     "@type": "PostalAddress",
-    streetAddress: "3232 McKinney Ave, Suite 285",
-    addressLocality: "Dallas",
-    addressRegion: "TX",
-    postalCode: "75024",
-    addressCountry: "US",
+    streetAddress: "Second Floor, Aditya Plaza-2, F-204, Ram Nagar, Kaushambi",
+    addressLocality: "Ghaziabad",
+    addressRegion: "Uttar Pradesh",
+    postalCode: "201010",
+    addressCountry: "IN",
   },
   sameAs: [
     "https://www.linkedin.com/company/glocious-infotech",

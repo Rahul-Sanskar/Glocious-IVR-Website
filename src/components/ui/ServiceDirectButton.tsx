@@ -1,6 +1,5 @@
 "use client";
 import React from "react";
-import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 
@@ -11,14 +10,12 @@ interface ServiceDirectButtonProps {
 
 export function ServiceDirectButton({ className, label = "Get This Service" }: ServiceDirectButtonProps) {
     return (
-        <Button 
-            asChild 
-            size="lg" 
+        <Button
+            size="lg"
             className={`gap-2 ${className}`}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
         >
-            <Link href="/contact">
-                {label} <ArrowRight className="w-4 h-4" />
-            </Link>
+            {label} <ArrowRight className="w-4 h-4" />
         </Button>
     );
 }

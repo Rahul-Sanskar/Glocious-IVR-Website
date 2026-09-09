@@ -1,15 +1,12 @@
 import React from "react";
 import Link from "next/link";
 import {
-  Home,
   Phone,
   Mail,
-  Globe,
   Shield,
   Folder,
   Users,
   Settings,
-  LogOut,
 } from "lucide-react";
 
 export function Footer() {
@@ -21,24 +18,28 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <Globe className="w-8 h-8 text-primary" />
-              <span className="text-2xl font-bold font-heading">GLOCIOUS INFOTECH PVT. LTD.</span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/glocious-logo.png"
+                alt="Glocious Infotech"
+                className="h-10 w-auto object-contain"
+              />
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Enterprise IVR and cloud telephony solutions transforming customer engagement through intelligent automation and analytics since 2014.
             </p>
             <div className="space-y-2 mt-4">
               <a
-                href="tel:+919319499699"
+                href="tel:+919999114347"
                 className="flex items-center gap-2 text-xs text-primary hover:text-white transition-colors"
               >
-                <Phone size={12} /> +91 9319499699
+                <Phone size={12} /> +91 99991 14347
               </a>
               <a
-                href="mailto:info@glocious.com"
+                href="mailto:kazim@glocious.com"
                 className="flex items-center gap-2 text-xs text-primary hover:text-white transition-colors"
               >
-                <Mail size={12} /> info@glocious.com
+                <Mail size={12} /> kazim@glocious.com
               </a>
             </div>
           </div>
@@ -154,12 +155,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                {/* Only include if page exists */}
-                {/* <Link href="/cancellation-refund" className="hover:text-primary transition-colors">Cancellation & Refund Policy</Link> */}
-
-                {/* Alternative: link to terms which may cover this */}
-                <Link href="/terms" className="hover:text-primary transition-colors">
-                  Cancellation & Refund Policy
+                <Link href="/cancellation-refund" className="hover:text-primary transition-colors">
+                  Cancellation &amp; Refund Policy
                 </Link>
               </li>
             </ul>
