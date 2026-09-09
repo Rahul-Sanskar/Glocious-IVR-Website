@@ -50,6 +50,14 @@ export const metadata: Metadata = {
     index: true,
     follow: true,
   },
+  icons: {
+    icon: [
+      { url: "/icon.png", type: "image/png", sizes: "32x32" },
+      { url: "/icon.png", type: "image/png", sizes: "192x192" },
+    ],
+    apple: [{ url: "/icon.png", sizes: "180x180" }],
+    shortcut: ["/icon.png"],
+  },
 };
 
 const inter = Inter({

@@ -7,18 +7,18 @@ import { JoinMission } from "@/components/team/JoinMission";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Meet the SoftBiz Team — Developers, Designers & Marketers",
-  description: "Meet the people behind SoftBiz — developers, designers, and marketers who care about your results as much as you do.",
+  title: "Meet the Glocious Team — Developers, Designers & Marketers",
+  description: "Meet the people behind Glocious — developers, designers, and marketers who care about your results as much as you do.",
   openGraph: {
-    title: "Meet the SoftBiz Team — Developers, Designers & Marketers",
-    description: "Meet the people behind SoftBiz — developers, designers, and marketers who care about your results as much as you do.",
-    url: "https://www.thesoftbiz.com/team",
+    title: "Meet the Glocious Team — Developers, Designers & Marketers",
+    description: "Meet the people behind Glocious — developers, designers, and marketers who care about your results as much as you do.",
+    url: "https://www.glocious.com/team",
   },
   twitter: {
-    title: "Meet the SoftBiz Team — Developers, Designers & Marketers",
+    title: "Meet the Glocious Team — Developers, Designers & Marketers",
   },
   alternates: {
-    canonical: "https://www.thesoftbiz.com/team",
+    canonical: "https://www.glocious.com/team",
   },
 };
 
@@ -26,7 +26,7 @@ export default function TeamPage() {
   return (
     <div className="flex flex-col min-h-screen">
       <Header />
-      
+
       <main className="flex-grow pt-32">
         <section className="container mx-auto px-6 text-center mb-16">
              <div className="inline-block px-3 py-1 mb-6 border border-white/10 rounded-full bg-secondary/30 backdrop-blur-sm">
@@ -39,9 +39,9 @@ export default function TeamPage() {
         </section>
 
         <TeamGrid />
-        
+
         <CultureStats />
-        
+
         <PerksGrid />
 
         <JoinMission />

@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 
-const BASE_URL = "https://www.thesoftbiz.com";
+const BASE_URL = "https://www.glocious.com";
 
 const serviceMeta: Record<string, { title: string; description: string }> = {
   "web-development": {
     title: "Next.js & React Web Development Agency",
     description:
-      "Custom Next.js and React websites built for speed, SEO, and conversions. See how SoftBiz builds digital products that last.",
+      "Custom Next.js and React websites built for speed, SEO, and conversions. See how Glocious builds digital products that last.",
   },
   "shopify-solutions": {
     title: "Shopify Store Development & Custom Themes",
@@ -16,12 +16,12 @@ const serviceMeta: Record<string, { title: string; description: string }> = {
   "amazon-services": {
     title: "Amazon Seller Management & PPC Agency",
     description:
-      "Amazon seller account management, listing optimization & PPC campaigns. Grow your marketplace revenue with SoftBiz.",
+      "Amazon seller account management, listing optimization & PPC campaigns. Grow your marketplace revenue with Glocious.",
   },
   "digital-marketing": {
     title: "SEO & Digital Marketing Agency",
     description:
-      "SEO, content strategy, and search marketing that drives organic traffic. SoftBiz builds visibility that compounds over time.",
+      "SEO, content strategy, and search marketing that drives organic traffic. Glocious builds visibility that compounds over time.",
   },
   "google-ads": {
     title: "Google Ads Management & PPC Agency",
@@ -31,7 +31,7 @@ const serviceMeta: Record<string, { title: string; description: string }> = {
   "social-media": {
     title: "Social Media Advertising Agency",
     description:
-      "Community management and paid social advertising strategies that turn scrollers into loyal customers. SoftBiz handles it all.",
+      "Community management and paid social advertising strategies that turn scrollers into loyal customers. Glocious handles it all.",
   },
 };
 
@@ -56,12 +56,12 @@ export async function generateMetadata({
     title: meta.title,
     description: meta.description,
     openGraph: {
-      title: `${meta.title} | SoftBiz`,
+      title: `${meta.title} | Glocious`,
       description: meta.description,
       url: `${BASE_URL}/services/${slug}`,
     },
     twitter: {
-      title: `${meta.title} | SoftBiz`,
+      title: `${meta.title} | Glocious`,
     },
     alternates: {
       canonical: `${BASE_URL}/services/${slug}`,

@@ -44,9 +44,9 @@ export function Header() {
     { label: "IVR Solutions", href: "/ivr-solutions" },
     { label: "Features", href: "/features" },
     { label: "Industries", href: "/industries" },
-    { label: "Why Glocious", href: "/why-glocious" },
-    { label: "Testimonials", href: "/testimonials" },
-    { label: "FAQ", href: "/faq" },
+    { label: "Why Glocious", href: "/#why-glocious" },
+    { label: "Testimonials", href: "/#testimonials" },
+    { label: "FAQ", href: "/#faq" },
     { label: "Contact", href: "/contact" },
   ];
 
