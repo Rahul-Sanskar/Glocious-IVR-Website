@@ -1,6 +1,7 @@
 import type { Config } from "tailwindcss";
 
 export default {
+    darkMode: "class",
     content: [
         "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
         "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -15,9 +16,8 @@ export default {
                     DEFAULT: "var(--primary)",
                     foreground: "var(--primary-foreground)",
                     glow: "var(--primary-glow)",
-                    '100%': { boxShadow: '0 0 20px var(--primary-glow), 0 0 30px var(--primary-glow)' },
-                }
-            }
+                },
+            },
         },
     },
     plugins: [],

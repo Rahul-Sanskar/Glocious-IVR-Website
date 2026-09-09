@@ -347,12 +347,7 @@ export function IVRFeatures() {
           </p>
           <button
             className="inline-flex items-center px-8 py-3 rounded-full bg-primary text-white font-medium hover:bg-primary/90 transition-colors"
-            onClick={() => {
-              const contactSection = document.getElementById("contact");
-              if (contactSection) {
-                contactSection.scrollIntoView({ behavior: "smooth" });
-              }
-            }}
+            onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
           >
             Request a Demo
             <svg

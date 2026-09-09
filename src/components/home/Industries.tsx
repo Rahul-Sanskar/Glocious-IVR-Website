@@ -15,6 +15,11 @@ import {
   Plane,
   Laptop,
   Briefcase,
+  Shield,
+  Building2,
+  Zap,
+  Car,
+  Scale,
 } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -26,18 +31,18 @@ type Industry = {
   problem: string;
   solution: string;
   color: string;
-  accent: string;
 };
 
+// Exactly 15 — 3 rows × 5 columns
 const industries: Industry[] = [
+  // ── Row 1 ──────────────────────────────────────────────────────────────
   {
     id: 1,
     title: "Banking & Finance",
     icon: Banknote,
     problem: "High call volumes overwhelm support during peak hours",
     solution: "Route to accounts, loans, and fraud departments instantly",
-    color: "from-blue-500 to-cyan-500",
-    accent: "blue",
+    color: "from-blue-500 to-cyan-400",
   },
   {
     id: 2,
@@ -45,8 +50,7 @@ const industries: Industry[] = [
     icon: HeartPulse,
     problem: "Patients can't reach the right department quickly",
     solution: "Direct to appointments, prescriptions, and emergencies",
-    color: "from-red-500 to-rose-500",
-    accent: "red",
+    color: "from-rose-500 to-pink-400",
   },
   {
     id: 3,
@@ -54,8 +58,7 @@ const industries: Industry[] = [
     icon: GraduationCap,
     problem: "Long wait times for admissions and student support",
     solution: "Auto-route to admissions, financial aid, and services",
-    color: "from-green-500 to-emerald-500",
-    accent: "green",
+    color: "from-emerald-500 to-green-400",
   },
   {
     id: 4,
@@ -63,8 +66,7 @@ const industries: Industry[] = [
     icon: Home,
     problem: "Property inquiries get lost, leading to missed deals",
     solution: "Connect buyers, sellers, and renters to agents instantly",
-    color: "from-purple-500 to-violet-500",
-    accent: "purple",
+    color: "from-violet-500 to-purple-400",
   },
   {
     id: 5,
@@ -72,17 +74,16 @@ const industries: Industry[] = [
     icon: ShoppingCart,
     problem: "Order and return queries flood customer service lines",
     solution: "Automate tracking, returns, and product inquiries 24/7",
-    color: "from-orange-500 to-yellow-500",
-    accent: "orange",
+    color: "from-orange-500 to-amber-400",
   },
+  // ── Row 2 ──────────────────────────────────────────────────────────────
   {
     id: 6,
     title: "Retail",
     icon: Store,
-    problem: "Store hour and inventory questions overwhelm staff",
+    problem: "Store hours and inventory questions overwhelm staff",
     solution: "Instant self-service answers; complex issues routed out",
-    color: "from-pink-500 to-rose-500",
-    accent: "pink",
+    color: "from-fuchsia-500 to-pink-400",
   },
   {
     id: 7,
@@ -90,8 +91,7 @@ const industries: Industry[] = [
     icon: Truck,
     problem: "Shipment tracking calls create constant phone traffic",
     solution: "Real-time updates and delivery notifications automated",
-    color: "from-amber-500 to-lime-500",
-    accent: "amber",
+    color: "from-lime-500 to-green-400",
   },
   {
     id: 8,
@@ -99,26 +99,64 @@ const industries: Industry[] = [
     icon: Plane,
     problem: "Booking changes and cancellations surge in travel season",
     solution: "Handle reservations and modifications efficiently",
-    color: "from-teal-500 to-cyan-500",
-    accent: "teal",
+    color: "from-teal-500 to-cyan-400",
   },
   {
     id: 9,
     title: "Technology",
     icon: Laptop,
     problem: "IT support tickets overwhelm technical teams",
-    solution: "Route issues to specialists with status updates",
-    color: "from-indigo-500 to-blue-500",
-    accent: "indigo",
+    solution: "Route issues to specialists with live status updates",
+    color: "from-indigo-500 to-blue-400",
   },
   {
     id: 10,
+    title: "Insurance",
+    icon: Shield,
+    problem: "Policy queries and claims calls clog agent queues",
+    solution: "Self-serve policy info; escalate claims to the right team",
+    color: "from-sky-500 to-cyan-400",
+  },
+  // ── Row 3 ──────────────────────────────────────────────────────────────
+  {
+    id: 11,
+    title: "Government",
+    icon: Building2,
+    problem: "Citizens struggle to reach the right department",
+    solution: "Structured menus route queries to correct civic services",
+    color: "from-slate-400 to-blue-400",
+  },
+  {
+    id: 12,
+    title: "Utilities",
+    icon: Zap,
+    problem: "Outage and billing calls spike and overwhelm helpdesks",
+    solution: "Automated outage status and billing self-service 24/7",
+    color: "from-yellow-400 to-orange-400",
+  },
+  {
+    id: 13,
+    title: "Automotive",
+    icon: Car,
+    problem: "Service bookings and parts queries jam dealership lines",
+    solution: "Auto-schedule service slots and route parts inquiries",
+    color: "from-zinc-400 to-slate-400",
+  },
+  {
+    id: 14,
+    title: "Legal Services",
+    icon: Scale,
+    problem: "Client intake calls are unstructured and time-consuming",
+    solution: "Qualify leads and route to the right practice area fast",
+    color: "from-red-500 to-rose-400",
+  },
+  {
+    id: 15,
     title: "Other Businesses",
     icon: Briefcase,
     problem: "Generic lines struggle with diverse inquiry types",
     solution: "Customise call flows for any unique customer journey",
-    color: "from-gray-500 to-slate-500",
-    accent: "gray",
+    color: "from-purple-500 to-indigo-400",
   },
 ];
 
@@ -129,10 +167,10 @@ export function Industries() {
   useGSAP(() => {
     /* Header */
     gsap.from(".industries-header > *", {
-      y: 28,
+      y: 24,
       opacity: 0,
       stagger: 0.1,
-      duration: 0.75,
+      duration: 0.7,
       ease: "power3.out",
       scrollTrigger: {
         trigger: ".industries-header",
@@ -141,38 +179,28 @@ export function Industries() {
       },
     });
 
-    /* Cards — cascade in with staggered clip reveal */
+    /* All 15 cards fade+slide in together in a fast stagger.
+       IMPORTANT: set opacity:1 on all cards immediately so none stay dim */
     const cards = gsap.utils.toArray<HTMLElement>(".industry-card");
-    gsap.from(cards, {
-      opacity: 0,
-      y: 36,
-      scale: 0.95,
+
+    // Reset to visible first so there's no flash of invisible cards
+    gsap.set(cards, { opacity: 0, y: 30, scale: 0.96 });
+
+    gsap.to(cards, {
+      opacity: 1,
+      y: 0,
+      scale: 1,
       stagger: {
-        each: 0.06,
+        each: 0.04,
         from: "start",
-        grid: "auto",
       },
-      duration: 0.6,
+      duration: 0.55,
       ease: "power3.out",
       scrollTrigger: {
         trigger: ".industries-grid",
-        start: "top 83%",
+        start: "top 84%",
         toggleActions: "play none none reverse",
-      },
-    });
-
-    /* Icon wrappers pop in */
-    gsap.from(".industry-icon", {
-      scale: 0,
-      rotate: 10,
-      stagger: 0.05,
-      duration: 0.4,
-      ease: "back.out(2)",
-      delay: 0.25,
-      scrollTrigger: {
-        trigger: ".industries-grid",
-        start: "top 83%",
-        toggleActions: "play none none reverse",
+        onLeaveBack: () => gsap.set(cards, { opacity: 0, y: 30, scale: 0.96 }),
       },
     });
   }, { scope: sectionRef });
@@ -182,9 +210,9 @@ export function Industries() {
       ref={sectionRef}
       className="py-14 md:py-20 bg-background/50 relative overflow-hidden"
     >
-      {/* Subtle background */}
+      {/* Background */}
       <div className="absolute inset-0 -z-10 pointer-events-none">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.04)_0%,transparent_70%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.05)_0%,transparent_70%)]" />
       </div>
 
       <div className="relative z-10 container mx-auto px-6">
@@ -203,52 +231,57 @@ export function Industries() {
           </p>
         </div>
 
-        {/* Grid */}
-        <div className="industries-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3">
+        {/* ── 5-column grid ──────────────────────────────────────────────
+            On screens < md  → 2 columns
+            On screens ≥ md  → 5 columns always
+            Each row = exactly 5 cards, 3 rows total = 15 cards         */}
+        <div className="industries-grid grid grid-cols-2 md:grid-cols-5 gap-3">
           {industries.map((industry) => (
             <div
               key={industry.id}
-              className="industry-card group relative rounded-xl border border-white/8 bg-white/4 backdrop-blur-sm overflow-hidden cursor-default
-                hover:border-white/20 hover:-translate-y-1 hover:bg-white/7
+              className="industry-card group relative rounded-xl border border-white/10 bg-white/5 overflow-hidden cursor-default
+                hover:border-white/25 hover:-translate-y-1
                 transition-all duration-300"
               onMouseEnter={() => setHovered(industry.id)}
               onMouseLeave={() => setHovered(null)}
             >
-              {/* Colour wash on hover */}
+              {/* Per-card colour wash — same opacity for every card */}
               <div
-                className={`absolute inset-0 bg-gradient-to-br ${industry.color} opacity-0 group-hover:opacity-[0.07] transition-opacity duration-400 pointer-events-none`}
+                className={`absolute inset-0 bg-gradient-to-br ${industry.color} opacity-[0.08] group-hover:opacity-[0.14] transition-opacity duration-300 pointer-events-none`}
               />
 
               {/* Top accent line */}
               <div
-                className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${industry.color} scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left`}
+                className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${industry.color} scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left`}
               />
 
-              <div className="relative z-10 p-4 sm:p-5">
-                {/* Icon */}
+              <div className="relative z-10 p-4">
+                {/* Icon — solid coloured square, same treatment for all */}
                 <div className="industry-icon relative inline-flex mb-3">
                   <div
-                    className={`w-9 h-9 rounded-lg flex items-center justify-center bg-gradient-to-br ${industry.color} bg-opacity-15`}
+                    className={`w-9 h-9 rounded-lg flex items-center justify-center bg-gradient-to-br ${industry.color}`}
                   >
-                    <industry.icon size={18} className="text-white" />
+                    <industry.icon size={17} className="text-white drop-shadow" />
                   </div>
                   {hovered === industry.id && (
                     <span
-                      className={`absolute inset-0 rounded-lg bg-gradient-to-br ${industry.color} opacity-30 animate-ping`}
+                      className={`absolute inset-0 rounded-lg bg-gradient-to-br ${industry.color} opacity-50 animate-ping`}
                     />
                   )}
                 </div>
 
-                {/* Title */}
+                {/* Title — gradient text on hover */}
                 <h3
-                  className={`text-sm font-bold text-white mb-3 leading-snug group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r ${industry.color} transition-all duration-300`}
+                  className={`text-sm font-bold text-white mb-3 leading-snug
+                    group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r ${industry.color}
+                    transition-all duration-300`}
                 >
                   {industry.title}
                 </h3>
 
                 {/* Problem */}
                 <div className="flex items-start gap-2 mb-2">
-                  <span className="mt-1 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-red-400/70" />
+                  <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-red-400" />
                   <p className="text-xs text-muted-foreground leading-relaxed">
                     {industry.problem}
                   </p>
@@ -256,7 +289,7 @@ export function Industries() {
 
                 {/* Solution */}
                 <div className="flex items-start gap-2">
-                  <span className="mt-1 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-green-400/70" />
+                  <span className="mt-1.5 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-emerald-400" />
                   <p className="text-xs text-muted-foreground leading-relaxed">
                     {industry.solution}
                   </p>

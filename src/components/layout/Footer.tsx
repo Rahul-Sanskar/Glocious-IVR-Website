@@ -1,15 +1,12 @@
 import React from "react";
 import Link from "next/link";
 import {
-  Home,
   Phone,
   Mail,
-  Globe,
   Shield,
   Folder,
   Users,
   Settings,
-  LogOut,
 } from "lucide-react";
 
 export function Footer() {
@@ -21,24 +18,28 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
           <div>
             <div className="flex items-center gap-3 mb-6">
-              <Globe className="w-8 h-8 text-primary" />
-              <span className="text-xl sm:text-2xl font-bold font-heading break-words">GLOCIOUS INFOTECH PVT. LTD.</span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src="/glocious-logo.png"
+                alt="Glocious Infotech"
+                className="h-10 w-auto object-contain"
+              />
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Enterprise IVR and cloud telephony solutions transforming customer engagement through intelligent automation and analytics since 2014.
             </p>
             <div className="space-y-2 mt-4">
               <a
-                href="tel:+919319499699"
+                href="tel:+919999114347"
                 className="flex items-center gap-2 text-xs text-primary hover:text-white transition-colors"
               >
-                <Phone size={12} /> +91 93194 99699
+                <Phone size={12} /> +91 99991 14347
               </a>
               <a
-                href="mailto:contact@glocious.com"
+                href="mailto:kazim@glocious.com"
                 className="flex items-center gap-2 text-xs text-primary hover:text-white transition-colors"
               >
-                <Mail size={12} /> contact@glocious.com
+                <Mail size={12} /> kazim@glocious.com
               </a>
             </div>
           </div>

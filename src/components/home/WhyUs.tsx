@@ -67,50 +67,58 @@ export function WhyUs() {
   const sectionRef = useRef<HTMLElement>(null);
 
   useGSAP(() => {
+    // Set all animated elements invisible first so there's a defined start state
+    gsap.set(".why-header > *", { opacity: 0, y: 24 });
+    gsap.set(".why-card", { opacity: 0, y: 32, scale: 0.95 });
+    gsap.set(".why-icon", { scale: 0, rotate: -12 });
+
     /* Header */
-    gsap.from(".why-header > *", {
-      y: 32,
-      opacity: 0,
-      stagger: 0.12,
-      duration: 0.8,
+    gsap.to(".why-header > *", {
+      y: 0,
+      opacity: 1,
+      stagger: 0.1,
+      duration: 0.75,
       ease: "power3.out",
       scrollTrigger: {
         trigger: ".why-header",
-        start: "top 85%",
+        start: "top 88%",
         toggleActions: "play none none reverse",
+        onLeaveBack: () =>
+          gsap.set(".why-header > *", { opacity: 0, y: 24 }),
       },
     });
 
-    /* Cards — scale + fade in with stagger */
-    gsap.from(".why-card", {
-      y: 40,
-      opacity: 0,
-      scale: 0.94,
-      stagger: {
-        each: 0.08,
-        from: "start",
-      },
-      duration: 0.65,
+    /* Cards */
+    gsap.to(".why-card", {
+      y: 0,
+      opacity: 1,
+      scale: 1,
+      stagger: { each: 0.07, from: "start" },
+      duration: 0.6,
       ease: "power3.out",
       scrollTrigger: {
         trigger: ".why-grid",
-        start: "top 82%",
+        start: "top 85%",
         toggleActions: "play none none reverse",
+        onLeaveBack: () =>
+          gsap.set(".why-card", { opacity: 0, y: 32, scale: 0.95 }),
       },
     });
 
-    /* Icon containers — pop in after cards */
-    gsap.from(".why-icon", {
-      scale: 0,
-      rotate: -15,
-      stagger: 0.07,
-      duration: 0.45,
+    /* Icons pop in after cards land */
+    gsap.to(".why-icon", {
+      scale: 1,
+      rotate: 0,
+      stagger: 0.06,
+      duration: 0.4,
       ease: "back.out(2.5)",
-      delay: 0.2,
+      delay: 0.18,
       scrollTrigger: {
         trigger: ".why-grid",
-        start: "top 82%",
+        start: "top 85%",
         toggleActions: "play none none reverse",
+        onLeaveBack: () =>
+          gsap.set(".why-icon", { scale: 0, rotate: -12 }),
       },
     });
   }, { scope: sectionRef });
@@ -185,13 +193,13 @@ export function WhyUs() {
               </p>
             </div>
 
-            <Link
-              href="/contact"
+            <button
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
               className="relative z-10 inline-flex items-center gap-2 mt-5 self-start px-5 py-2.5 bg-white text-primary rounded-full font-bold text-sm hover:bg-white/90 hover:gap-3 transition-all duration-200 group/btn"
             >
               Get Started
               <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-0.5 transition-transform" />
-            </Link>
+            </button>
           </div>
         </div>
       </div>

@@ -2,28 +2,92 @@
 @tailwind components;
 @tailwind utilities;
 
+/* ── Smooth scroll with fixed-header offset ─────────────────────── */
+html {
+  scroll-behavior: smooth;
+  /* 80px = tallest header height (sm:h-20). Prevents section titles
+     from hiding behind the fixed nav when jumping to an anchor. */
+  scroll-padding-top: 80px;
+}
+
 :root {
-  /* Glocious Brand Colors */
-  --background: #080a2e; /* Deep navy */
-  --foreground: #e6e9ff; /* Light lavender */
-  
-  /* Primary: Electric Purple */
-  --primary: #7c3aed; /* Electric purple */
+  /* ── Dark mode (default) ─────────────────────────────────────── */
+  --background: #080a2e;
+  --foreground: #e6e9ff;
+  --primary: #7c3aed;
   --primary-foreground: #ffffff;
   --primary-glow: rgba(124, 58, 237, 0.5);
-  
-  /* Secondary: Dark Blue */
-  --secondary: #1e293b; /* Very dark gray */
-  --secondary-foreground: #a5b4fc; /* Soft lavender */
-  
-  /* Accent: Cyan */
-  --accent: #00c2ff; /* Bright cyan */
+  --secondary: #1e293b;
+  --secondary-foreground: #a5b4fc;
+  --accent: #00c2ff;
   --accent-foreground: #ffffff;
   --accent-glow: rgba(0, 194, 255, 0.5);
-  
-  /* Glass effects */
   --glass-border: rgba(255, 255, 255, 0.1);
   --glass-bg: rgba(14, 16, 46, 0.5);
+  --muted-foreground: #94a3b8;
+}
+
+/* ── Light mode overrides ──────────────────────────────────────── */
+html.light {
+  --background: #f0f4ff;
+  --foreground: #000000;          /* strict black */
+  --primary: #6d28d9;
+  --primary-foreground: #ffffff;
+  --primary-glow: rgba(109, 40, 217, 0.35);
+  --secondary: #dde3f0;
+  --secondary-foreground: #000000;
+  --accent: #0284c7;
+  --accent-foreground: #ffffff;
+  --accent-glow: rgba(2, 132, 199, 0.35);
+  --glass-border: rgba(0, 0, 0, 0.12);
+  --glass-bg: rgba(240, 244, 255, 0.8);
+  --muted-foreground: #1a1a1a;    /* near-black for muted text */
+}
+
+/* ── Light mode: force ALL text black, carve exceptions ─────────── */
+
+/* Step 1: every element → black */
+html.light * {
+  color: #000000 !important;
+}
+
+/* Step 2: restore white for elements that genuinely need it */
+
+/* Primary-coloured buttons and their children */
+html.light button[class*="bg-primary"],
+html.light button[class*="bg-primary"] *,
+html.light a[class*="bg-primary"],
+html.light a[class*="bg-primary"] *,
+html.light [class*="rounded"][class*="bg-primary"],
+html.light [class*="rounded"][class*="bg-primary"] * {
+  color: #ffffff !important;
+}
+
+/* Sections/divs with a black background (TrustBar, Stats strip, Footer dark strip) */
+html.light [class*="bg-black"] *,
+html.light [class*="bg-black"],
+html.light .bg-black *,
+html.light section.bg-black *,
+html.light div.bg-black * {
+  color: #ffffff !important;
+}
+
+/* Gradient text spans (hero heading, industry titles on hover) */
+html.light [class*="bg-clip-text"][class*="bg-gradient"] {
+  color: transparent !important;
+}
+
+/* SVG icons inherit properly */
+html.light svg {
+  color: inherit !important;
+}
+
+/* Smooth colour transitions when switching theme */
+*, *::before, *::after {
+  transition:
+    background-color 0.25s ease,
+    border-color 0.25s ease,
+    color 0.2s ease;
 }
 
 body {
@@ -34,6 +98,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   overflow-x: hidden;
   -webkit-tap-highlight-color: transparent;
+}
+
+html.light body {
+  background-image: radial-gradient(circle at 50% 0%, #dde6f7 0%, var(--background) 50%);
 }
 
 /* Respect prefers-reduced-motion */

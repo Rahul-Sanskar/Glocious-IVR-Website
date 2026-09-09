@@ -60,15 +60,12 @@ export function CTASection() {
             Give every customer a faster, smarter path to the right person.
           </p>
 
-          {/* FIX: buttons use sm:w-auto instead of flex-1 so they don't stretch across the full container on desktop */}
+          {/* Buttons scroll back to hero form at top */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button
               size="lg"
               className="sm:w-auto px-8 py-4 rounded-full bg-primary text-white font-medium hover:bg-primary/90 transition-colors"
-              onClick={() => {
-                const el = document.getElementById("contact");
-                if (el) el.scrollIntoView({ behavior: "smooth" });
-              }}
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
               <span className="inline-flex items-center gap-2">
                 Get Your IVR Solution
@@ -79,6 +76,7 @@ export function CTASection() {
             <Button
               size="lg"
               className="sm:w-auto px-8 py-4 rounded-full border border-white/10 bg-white/5 text-white font-medium hover:bg-white/10 hover:border-primary/50 transition-colors"
+              onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             >
               Talk to Our Team
             </Button>
@@ -88,15 +86,15 @@ export function CTASection() {
           <p className="mt-8 text-sm text-muted-foreground flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
             <span className="inline-flex items-center gap-1.5">
               <Phone className="w-4 h-4 flex-shrink-0" />
-              <a href="tel:+919319499699" className="hover:text-white transition-colors">
-                +91 93194 99699
+              <a href="tel:+919999114347" className="hover:text-white transition-colors">
+                +91 99991 14347
               </a>
             </span>
             <span className="text-white/20 hidden sm:inline">|</span>
             <span className="inline-flex items-center gap-1.5">
               <Mail className="w-4 h-4 flex-shrink-0" />
-              <a href="mailto:contact@glocious.com" className="hover:text-white transition-colors">
-                contact@glocious.com
+              <a href="mailto:kazim@glocious.com" className="hover:text-white transition-colors">
+                kazim@glocious.com
               </a>
             </span>
           </p>
