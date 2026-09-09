@@ -85,9 +85,7 @@ export default function RootLayout({
         <GlobalLoader />
         <TransitionProvider>
           <TransitionOverlay />
-          <main className="min-h-screen">
-            {children}
-          </main>
+          {children}
         </TransitionProvider>
       </body>
     </html>
@@ -99,7 +97,7 @@ const localBusinessSchema = {
   "@type": "ProfessionalService",
   name: "Glocious Infotech",
   url: GlociousBase_URL,
-  telephone: "+18332281750",
+  telephone: "+919319499699",
   email: "contact@glocious.com",
   address: {
     "@type": "PostalAddress",

@@ -31,12 +31,12 @@ export default function ContactPage() {
       <Header />
       
       <main className="flex-grow">
-        <section id="contact" className="container mx-auto px-6 mb-16 text-center">
+        <section id="contact" className="container mx-auto px-6 pt-32 mb-16 text-center">
           <h1 className="text-5xl md:text-8xl font-bold font-heading mb-6">
             Get in Touch
           </h1>
           <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-            Ready to transform your digital presence? We're here to help.
+            Ready to transform your customer communication? We&apos;re here to help.
           </p>
         </section>
 
@@ -53,7 +53,7 @@ export default function ContactPage() {
                 <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-secondary/30 hover:bg-primary/10 transition-colors border border-transparent hover:border-primary/30">
                   <Phone className="w-8 h-8 text-primary mb-4" />
                   <h3 className="font-bold mb-1">Phone</h3>
-                  <a href="tel:+18332281750" className="text-sm text-muted-foreground hover:text-white">+1 (833) 228-1750</a>
+                  <a href="tel:+919319499699" className="text-sm text-muted-foreground hover:text-white">+91 93194 99699</a>
                 </div>
                 <div className="flex flex-col items-center text-center p-6 rounded-2xl bg-secondary/30 hover:bg-primary/10 transition-colors border border-transparent hover:border-primary/30">
                   <MapPin className="w-8 h-8 text-primary mb-4" />
@@ -93,7 +93,7 @@ export default function ContactPage() {
                     />
                   </div>
                   <div>
-                    <label htmlFor="contact-email" className="block text-sm font-medium mb-1.5">Email <span className="primary">*</span></label>
+                    <label htmlFor="contact-email" className="block text-sm font-medium mb-1.5">Email <span className="text-primary">*</span></label>
                     <input
                       id="contact-email"
                       name="email"

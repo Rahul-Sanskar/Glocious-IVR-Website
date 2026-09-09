@@ -1,17 +1,23 @@
+import { Header } from "@/components/layout/Header";
+import { Footer } from "@/components/layout/Footer";
 import { IVRFeatures } from "@/components/home/IVRFeatures";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+  title: "IVR Features — Glocious Infotech",
+  description:
+    "Discover the powerful capabilities of Glocious IVR: smart call routing, voice analytics, CRM integration, multi-level menus, and more.",
+  alternates: { canonical: "https://www.glocious.com/features" },
+};
 
 export default function FeaturesPage() {
   return (
-    <div>
-      <section className="py-12">
-        <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-8">Our IVR Features</h2>
-          <p className="text-center text-muted-foreground max-w-2xl mx-auto mb-12">
-            Discover the powerful capabilities of our IVR solutions that drive efficiency and enhance customer experience.
-          </p>
-          <IVRFeatures />
-        </div>
-      </section>
+    <div className="flex flex-col min-h-screen bg-background text-foreground">
+      <Header />
+      <main className="flex-grow pt-20 sm:pt-24">
+        <IVRFeatures />
+      </main>
+      <Footer />
     </div>
   );
 }

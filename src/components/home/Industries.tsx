@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -14,7 +14,7 @@ import {
   Truck,
   Plane,
   Laptop,
-  Briefcase
+  Briefcase,
 } from "lucide-react";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -22,166 +22,248 @@ gsap.registerPlugin(ScrollTrigger);
 type Industry = {
   id: number;
   title: string;
-  icon: React.ReactNode;
+  icon: React.ComponentType<{ size?: number; className?: string }>;
   problem: string;
   solution: string;
   color: string;
+  accent: string;
 };
 
 const industries: Industry[] = [
   {
     id: 1,
-    title: "Banking & Financial Services",
-    icon: <Banknote size={24} />,
-    problem: "High call volumes during peak hours overwhelm support teams",
-    solution: "Route customers to the right department for accounts, loans, and fraud support",
+    title: "Banking & Finance",
+    icon: Banknote,
+    problem: "High call volumes overwhelm support during peak hours",
+    solution: "Route to accounts, loans, and fraud departments instantly",
     color: "from-blue-500 to-cyan-500",
+    accent: "blue",
   },
   {
     id: 2,
     title: "Healthcare",
-    icon: <HeartPulse size={24} />,
-    problem: "Patients struggle to reach the right department for appointments and emergencies",
-    solution: "Direct callers to appointments, prescriptions, and emergency services efficiently",
+    icon: HeartPulse,
+    problem: "Patients can't reach the right department quickly",
+    solution: "Direct to appointments, prescriptions, and emergencies",
     color: "from-red-500 to-rose-500",
+    accent: "red",
   },
   {
     id: 3,
     title: "Education",
-    icon: <GraduationCap size={24} />,
-    problem: "Students and parents face long wait times for admissions and support inquiries",
-    solution: "Route inquiries to admissions, financial aid, and student services automatically",
+    icon: GraduationCap,
+    problem: "Long wait times for admissions and student support",
+    solution: "Auto-route to admissions, financial aid, and services",
     color: "from-green-500 to-emerald-500",
+    accent: "green",
   },
   {
     id: 4,
     title: "Real Estate",
-    icon: <Home size={24} />,
-    problem: "Property inquiries get lost or delayed, leading to missed opportunities",
-    solution: "Connect buyers, sellers, and renters to the right agents instantly",
+    icon: Home,
+    problem: "Property inquiries get lost, leading to missed deals",
+    solution: "Connect buyers, sellers, and renters to agents instantly",
     color: "from-purple-500 to-violet-500",
+    accent: "purple",
   },
   {
     id: 5,
     title: "E-commerce",
-    icon: <ShoppingCart size={24} />,
-    problem: "Order status and return inquiries flood customer service lines",
-    solution: "Automate order tracking, returns, and product inquiries 24/7",
+    icon: ShoppingCart,
+    problem: "Order and return queries flood customer service lines",
+    solution: "Automate tracking, returns, and product inquiries 24/7",
     color: "from-orange-500 to-yellow-500",
+    accent: "orange",
   },
   {
     id: 6,
     title: "Retail",
-    icon: <Store size={24} />,
-    problem: "Store hours, inventory, and promotion questions overwhelm staff",
-    solution: "Provide instant answers to common questions and route complex issues",
+    icon: Store,
+    problem: "Store hour and inventory questions overwhelm staff",
+    solution: "Instant self-service answers; complex issues routed out",
     color: "from-pink-500 to-rose-500",
+    accent: "pink",
   },
   {
     id: 7,
     title: "Logistics",
-    icon: <Truck size={24} />,
-    problem: "Shipment tracking and delivery updates create constant phone traffic",
-    solution: "Offer real-time tracking updates and delivery notifications automatically",
+    icon: Truck,
+    problem: "Shipment tracking calls create constant phone traffic",
+    solution: "Real-time updates and delivery notifications automated",
     color: "from-amber-500 to-lime-500",
+    accent: "amber",
   },
   {
     id: 8,
     title: "Travel & Hospitality",
-    icon: <Plane size={24} />,
-    problem: "Booking changes, cancellations, and itinerary questions peak during travel seasons",
-    solution: "Handle reservations, modifications, and travel information efficiently",
+    icon: Plane,
+    problem: "Booking changes and cancellations surge in travel season",
+    solution: "Handle reservations and modifications efficiently",
     color: "from-teal-500 to-cyan-500",
+    accent: "teal",
   },
   {
     id: 9,
     title: "Technology",
-    icon: <Laptop size={24} />,
-    problem: "Technical support tickets and service inquiries overwhelm IT teams",
-    solution: "Route issues to the right technical specialists and provide status updates",
+    icon: Laptop,
+    problem: "IT support tickets overwhelm technical teams",
+    solution: "Route issues to specialists with status updates",
     color: "from-indigo-500 to-blue-500",
+    accent: "indigo",
   },
   {
     id: 10,
     title: "Other Businesses",
-    icon: <Briefcase size={24} />,
-    problem: "Generic customer service lines struggle to handle diverse inquiry types",
-    solution: "Customize call flows to match any business's unique customer journey",
+    icon: Briefcase,
+    problem: "Generic lines struggle with diverse inquiry types",
+    solution: "Customise call flows for any unique customer journey",
     color: "from-gray-500 to-slate-500",
-  }
+    accent: "gray",
+  },
 ];
 
 export function Industries() {
   const sectionRef = useRef<HTMLElement>(null);
-  const gridRef = useRef<HTMLDivElement>(null);
+  const [hovered, setHovered] = useState<number | null>(null);
 
   useGSAP(() => {
-    gsap.from(gridRef.current?.children || [], {
-      y: 60,
+    /* Header */
+    gsap.from(".industries-header > *", {
+      y: 28,
       opacity: 0,
-      stagger: 0.05,
-      duration: 0.8,
+      stagger: 0.1,
+      duration: 0.75,
       ease: "power3.out",
       scrollTrigger: {
-        trigger: sectionRef.current,
-        start: "top 85%",
+        trigger: ".industries-header",
+        start: "top 88%",
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    /* Cards — cascade in with staggered clip reveal */
+    const cards = gsap.utils.toArray<HTMLElement>(".industry-card");
+    gsap.from(cards, {
+      opacity: 0,
+      y: 36,
+      scale: 0.95,
+      stagger: {
+        each: 0.06,
+        from: "start",
+        grid: "auto",
+      },
+      duration: 0.6,
+      ease: "power3.out",
+      scrollTrigger: {
+        trigger: ".industries-grid",
+        start: "top 83%",
+        toggleActions: "play none none reverse",
+      },
+    });
+
+    /* Icon wrappers pop in */
+    gsap.from(".industry-icon", {
+      scale: 0,
+      rotate: 10,
+      stagger: 0.05,
+      duration: 0.4,
+      ease: "back.out(2)",
+      delay: 0.25,
+      scrollTrigger: {
+        trigger: ".industries-grid",
+        start: "top 83%",
         toggleActions: "play none none reverse",
       },
     });
   }, { scope: sectionRef });
 
   return (
-    <section ref={sectionRef} className="py-20 md:py-24 bg-background/50 relative overflow-hidden">
-      {/* Subtle animated background pattern */}
-      <div className="absolute inset-0 -z-10">
-        <div className="absolute inset-0 bg-[url('/grid-pattern.svg')] opacity-[0.03] animate-[move_30s_linear_infinite]" />
+    <section
+      ref={sectionRef}
+      className="py-14 md:py-20 bg-background/50 relative overflow-hidden"
+    >
+      {/* Subtle background */}
+      <div className="absolute inset-0 -z-10 pointer-events-none">
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,rgba(99,102,241,0.04)_0%,transparent_70%)]" />
       </div>
-      
+
       <div className="relative z-10 container mx-auto px-6">
-        <div className="text-center mb-16">
-          <h2 className="text-sm font-mono font-bold text-primary tracking-widest uppercase mb-2">
+        {/* Header */}
+        <div className="industries-header text-center mb-10">
+          <p className="text-sm font-mono font-bold text-primary tracking-widest uppercase mb-2">
             Built for Every Business
+          </p>
+          <h2 className="text-3xl md:text-4xl font-bold font-heading mb-3">
+            Industry-Specific{" "}
+            <span className="text-primary">IVR Solutions</span>
           </h2>
-          <h3 className="text-3xl md:text-4xl font-bold font-heading mb-6">
-            Industry-Specific IVR Solutions
-          </h3>
-          <p className="text-muted-foreground text-lg max-w-3xl mx-auto">
-            Tailored IVR experiences that solve unique communication challenges across every industry vertical.
+          <p className="text-muted-foreground text-base max-w-2xl mx-auto">
+            Tailored call flows that solve real communication challenges across
+            every vertical.
           </p>
         </div>
 
-        <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 touch-manipulation">
-            {industries.map((industry) => (
+        {/* Grid */}
+        <div className="industries-grid grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-3">
+          {industries.map((industry) => (
+            <div
+              key={industry.id}
+              className="industry-card group relative rounded-xl border border-white/8 bg-white/4 backdrop-blur-sm overflow-hidden cursor-default
+                hover:border-white/20 hover:-translate-y-1 hover:bg-white/7
+                transition-all duration-300"
+              onMouseEnter={() => setHovered(industry.id)}
+              onMouseLeave={() => setHovered(null)}
+            >
+              {/* Colour wash on hover */}
               <div
-                key={industry.id}
-                className="group relative p-4 sm:p-6 rounded-xl border border-white/10 bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-500 overflow-hidden touch-manipulation"
-              >
-                {/* Subtle hover glow */}
-                <div
-                  className="absolute inset-0 rounded-xl bg-gradient-to-br from-white/0 to-white/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
-                />
-                
-                <div className="flex items-center justify-center mb-4">
-                  <div className={`w-10 h-10 sm:w-12 sm:h-12 rounded-xl flex items-center justify-center bg-gradient-to-br ${industry.color} opacity-10`}>
-                    <span className="w-5 h-5 sm:w-6 sm:h-6 text-primary/80 flex items-center justify-center">
-                      {industry.icon}
-                    </span>
+                className={`absolute inset-0 bg-gradient-to-br ${industry.color} opacity-0 group-hover:opacity-[0.07] transition-opacity duration-400 pointer-events-none`}
+              />
+
+              {/* Top accent line */}
+              <div
+                className={`absolute top-0 left-0 right-0 h-0.5 bg-gradient-to-r ${industry.color} scale-x-0 group-hover:scale-x-100 transition-transform duration-400 origin-left`}
+              />
+
+              <div className="relative z-10 p-4 sm:p-5">
+                {/* Icon */}
+                <div className="industry-icon relative inline-flex mb-3">
+                  <div
+                    className={`w-9 h-9 rounded-lg flex items-center justify-center bg-gradient-to-br ${industry.color} bg-opacity-15`}
+                  >
+                    <industry.icon size={18} className="text-white" />
                   </div>
+                  {hovered === industry.id && (
+                    <span
+                      className={`absolute inset-0 rounded-lg bg-gradient-to-br ${industry.color} opacity-30 animate-ping`}
+                    />
+                  )}
                 </div>
-                
-                <h4 className="font-semibold text-white mb-2 text-sm sm:text-base">{industry.title}</h4>
-                
-                <div className="flex items-start space-x-2 mb-3 text-xs sm:text-sm text-muted-foreground">
-                  <div className="w-2 h-2 rounded-full bg-primary/50 mt-0.5 flex-shrink-0" />
-                  <p className="whitespace-normal">{industry.problem}</p>
+
+                {/* Title */}
+                <h3
+                  className={`text-sm font-bold text-white mb-3 leading-snug group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r ${industry.color} transition-all duration-300`}
+                >
+                  {industry.title}
+                </h3>
+
+                {/* Problem */}
+                <div className="flex items-start gap-2 mb-2">
+                  <span className="mt-1 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-red-400/70" />
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    {industry.problem}
+                  </p>
                 </div>
-                
-                <div className="flex items-start space-x-2 text-xs sm:text-sm text-muted-foreground">
-                  <div className="w-2 h-2 rounded-full bg-primary/50 mt-0.5 flex-shrink-0" />
-                  <p className="whitespace-normal">{industry.solution}</p>
+
+                {/* Solution */}
+                <div className="flex items-start gap-2">
+                  <span className="mt-1 flex-shrink-0 w-1.5 h-1.5 rounded-full bg-green-400/70" />
+                  <p className="text-xs text-muted-foreground leading-relaxed">
+                    {industry.solution}
+                  </p>
                 </div>
               </div>
-            ))}
+            </div>
+          ))}
         </div>
       </div>
     </section>

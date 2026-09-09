@@ -58,7 +58,7 @@ export function Header() {
       >
         <div className="container mx-auto px-4 sm:px-6 h-16 sm:h-20 flex items-center justify-between">
           <div ref={logoRef} className="flex items-center">
-            <Link href={GLOCIOUS_BASE_URL} className="text-xl sm:text-2xl font-bold font-heading tracking-tight relative group">
+            <Link href="/" className="text-xl sm:text-2xl font-bold font-heading tracking-tight relative group">
               Glocious Infotech
             </Link>
           </div>
@@ -93,15 +93,12 @@ export function Header() {
       </header>
 
       {mounted && mobileMenuOpen && createPortal(
-        <div className="fixed inset-0 z-[100] bg-background/95 backdrop-blur-3xl flex flex-col items-center justify-center space-y-6 animate-in fade-in duration-200 safe-area-top safe-area-bottom">
-          <button
-            className="absolute top-4 right-4 p-2 text-foreground hover:text-primary md:hidden touch-manipulation"
-            onClick={() => setMobileMenuOpen(false)}
-            aria-label="Close menu"
-          >
-            <X size={24} />
-          </button>
-
+        <div
+          role="dialog"
+          aria-modal="true"
+          aria-label="Navigation menu"
+          className="fixed inset-0 z-[100] bg-background/95 backdrop-blur-3xl flex flex-col items-center justify-center space-y-6 animate-in fade-in duration-200 safe-area-top safe-area-bottom"
+        >
           <nav className="flex flex-col items-center space-y-4 w-full px-6">
             {navItems.map((item, index) => (
               <Link
@@ -118,7 +115,7 @@ export function Header() {
               asChild
               className="w-full max-w-xs mt-4 bg-primary hover:bg-primary/90 text-white touch-manipulation"
             >
-              <Link href="/contact">Request IVR Demo</Link>
+              <Link href="/contact" onClick={() => setMobileMenuOpen(false)}>Request IVR Demo</Link>
             </Button>
           </nav>
         </div>,

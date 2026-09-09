@@ -22,7 +22,7 @@ export function Footer() {
           <div>
             <div className="flex items-center gap-3 mb-6">
               <Globe className="w-8 h-8 text-primary" />
-              <span className="text-2xl font-bold font-heading">GLOCIOUS INFOTECH PVT. LTD.</span>
+              <span className="text-xl sm:text-2xl font-bold font-heading break-words">GLOCIOUS INFOTECH PVT. LTD.</span>
             </div>
             <p className="text-sm text-muted-foreground leading-relaxed">
               Enterprise IVR and cloud telephony solutions transforming customer engagement through intelligent automation and analytics since 2014.
@@ -32,13 +32,13 @@ export function Footer() {
                 href="tel:+919319499699"
                 className="flex items-center gap-2 text-xs text-primary hover:text-white transition-colors"
               >
-                <Phone size={12} /> +91 9319499699
+                <Phone size={12} /> +91 93194 99699
               </a>
               <a
-                href="mailto:info@glocious.com"
+                href="mailto:contact@glocious.com"
                 className="flex items-center gap-2 text-xs text-primary hover:text-white transition-colors"
               >
-                <Mail size={12} /> info@glocious.com
+                <Mail size={12} /> contact@glocious.com
               </a>
             </div>
           </div>
@@ -154,12 +154,8 @@ export function Footer() {
                 </Link>
               </li>
               <li>
-                {/* Only include if page exists */}
-                {/* <Link href="/cancellation-refund" className="hover:text-primary transition-colors">Cancellation & Refund Policy</Link> */}
-
-                {/* Alternative: link to terms which may cover this */}
-                <Link href="/terms" className="hover:text-primary transition-colors">
-                  Cancellation & Refund Policy
+                <Link href="/cancellation-refund" className="hover:text-primary transition-colors">
+                  Cancellation &amp; Refund Policy
                 </Link>
               </li>
             </ul>
